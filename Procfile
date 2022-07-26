@@ -1,1 +1,1 @@
-web: gunicorn pyla.pyla.wsgi
+web: gunicorn --pythonpath pyla.pyla.wsgi
