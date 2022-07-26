@@ -1,1 +1,1 @@
-web: gunicorn pyla.wsgi
+web: gunicorn pyla.pyla.wsgi
