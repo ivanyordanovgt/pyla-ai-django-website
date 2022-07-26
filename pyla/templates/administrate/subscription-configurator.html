@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/manage_profiles/profile_css/edit_profile1.css' %}">
+<div class="activity-box">
+    <div class="features">
+    <a href="{% url 'create subscription' %}"> CREATE SUBSCRIPTION </a>
+    <p> Create a subscription. Keep in mind you should create a feature first.</p>
+    </div>
+    <div class="features">
+    <a href="{% url 'create feature' %}"> CREATE FEATURES </a>
+    <p> Create a feature </p>
+    </div>
+
+    <div class="features">
+    <a href="{% url 'configure - subscription list' %}"> EDIT SUBSCRIPTIONS </a>
+    <p> Edit/Delete subscriptions </p>
+    </div>
+
+    <div class="features">
+    <a href="{% url 'configure features' %}"> EDIT FEATURES </a>
+    <p> Edit/Delete a features </p>
+    </div>
+
+</div>
+{% endblock %}

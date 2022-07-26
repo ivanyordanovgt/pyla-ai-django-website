@@ -1,0 +1,103 @@
+
+body {
+    height: 180vh;
+}
+
+.post {
+
+    margin-bottom: 1.5vh;
+    background: rgba(255, 255, 255, .3)
+}
+
+.post .post-content {
+    padding-left: 1vw;
+    float: left;
+    width: 29vw;
+}
+
+
+.post .posted_by {
+    color: dimgray;
+    font-size: 0.6vw;
+}
+
+.post .posted_by span {
+    font-family: "MV Boli", serif;
+    color: darkred;
+    font-size: 1.2vw;
+}
+
+.post .title {
+    font-size: 1vw;
+    color: black;
+    font-family: "Microsoft YaHei UI", fantasy;
+    float: left;
+    width: 26vw;
+}
+
+.round-image {
+    border-radius: 50%;
+    width: 3vw;
+    height: 3vw;
+}
+
+
+.post .post-title {
+    float: left;
+    width: 50vw;
+
+}
+
+.post .post-title img{
+    float: left;
+}
+
+.post .post-title h1 {
+    float: left;
+    margin-top: 2.3vh;
+    margin-left: 1vw;
+    text-align: left;
+}
+
+.post .description {
+    color: black;
+    float: left;
+    font-size: 0.9vw;
+    width: 46vw;
+    margin: 0;
+
+}
+
+.DivToScroll{
+    background-color: transparent;
+    border-radius: 4px 0 4px 0;
+    font-size: 12px;
+    font-weight: bold;
+    left: -1px;
+    padding: 10px 7px 5px;
+}
+
+.DivWithScroll{
+    background: transparent;
+    height:130vh;
+    width: 60vw;
+    margin-top: 10vh;
+    overflow:scroll;
+    overflow-x:hidden;
+}
+
+.comments {
+
+}
+
+.add-comment textarea{
+    width: 20vw;
+    height: 6vh;
+}
+
+.add-comment button {
+    font-size: 1vw;
+    /*margin: 0;*/
+    margin-left: 1vw;
+
+}

@@ -1,0 +1,156 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+    <style>
+    #emojies::-webkit-scrollbar {
+
+    }
+
+    textarea {
+        width: 50vw;
+    }
+
+    input {
+        width: 50vw;
+    }
+
+    #emojiesBtn {
+    position: absolute;
+    float: left;
+    margin-bottom: 20vw;
+    max-height: 30vh;
+    margin-left: 53vw;
+    margin-top: 36vh;
+    }
+    </style>
+
+<div class="infoBar">
+    <div class="infoBox">
+
+        <div id="aboutForum">
+            <h1> Balance </h1>
+        </div>
+
+        <p> Balance: <span>{{ request.user.profile.balance }}</span></p>
+        <h1 id="createdOn"> Cost of a post 100{{ forumObj.date }}</h1>
+
+        <div class="rules">
+            <div id="aboutForum">
+            <h1> Rules </h1>
+        </div>
+
+        <p>
+            1. Don't be racist
+        </p>
+        <p> 2. Don't be too rude </p>
+        <p> 3. Don't promote any products </p>
+        <p> 4. No death threats </p>
+        <p> 5. No personal info </p>
+        <p> 6. No begging </p>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="edit-form" style="float: left; position: absolute">
+    <div class="forum" style="margin-left: 1vw; margin-top: 16vh;" >
+
+         <form class='' style="width: 51vw" method="POST" enctype="multipart/form-data" action="{% url 'create post' forum_id %}">
+
+            <div id='blackOnTop' style="">
+
+            </div>
+            {% csrf_token %}
+            {{ form }}
+             <br>
+{#         <button style="margin: 0; margin-left: 22vw; font-size: 1vw"> Submit </button>#}
+            <button> <img src="{% static 'forums/images/sendArrow.png' %}"> </button>
+        </form>
+    </div>
+
+<h1 id="emojiesBtn"> 😀 </h1>
+
+<div id="emojies" style="
+    display: none;
+    position: absolute;
+    float: left;
+    width: 15vw;
+    overflow-x: hidden;
+    max-height: 30vh;
+    margin-left: 55.5vw;
+    margin-top: 20vh;
+    background-color: rgba(255, 255, 255, 0.6);
+">
+</div>
+
+</div>
+
+<script>
+let currentTextArea;
+let emojies = '😀 😃 😄 😁 😆 😅 😂 🤣 😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🤩 🥳 😏 😒 😞 😔 😟 😕 🙁 😣 😖 😫 😩 🥺 😢 😭 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😐 😑 😬 🙄 😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵 🤐 🥴 🤢 🤮 🤧 😷 🤒 🤕 🤑 🤠 😈 👿 👹 👺 🤡 💩 👻 💀 ☠ 👽 👾 🤖 🎃 😺 😸 😹 😻 😼 😽 🙀 😿 😾 👋 🤚 🖐 ✋ 🖖 👌 🤏 ✌ 🤞 🤟 🤘 🤙 👈 👉 👆 🖕 👇 ☝ 👍 👎 ✊ 👊 🤛 🤜 👏 🙌 👐 🤲 🤝 🙏 ✍ 💅 🤳 💪 🦾 🦵 🦿 🦶 👣 👂 🦻 👃 🧠 🦷 🦴 👀 👁 👅 👄 💋 🩸'
+emojies = emojies.split(' ')
+
+const closeBtn = document.getElementsByClassName('closeBtn')[0]
+const emojiesBtn = document.getElementById('emojiesBtn')
+const emojiesDiv = document.getElementById('emojies')
+const textarea = document.getElementsByName('description')[0]
+const textAreaTitle = document.getElementsByName('title')[0]
+
+emojiesBtn.style.fontSize = '1.5vw'
+emojiesBtn.style.color = '#a1887f'
+
+for (let emoji of emojies) {
+
+    let currentEmoji = document.createElement('p')
+    currentEmoji.textContent = emoji
+    currentEmoji.style.height = '0.2vh'
+
+    currentEmoji.addEventListener('click', () => {
+        if (currentTextArea) {
+            currentTextArea.value += emoji
+        }
+    })
+
+    currentEmoji.style.float = 'left';
+    emojiesDiv.appendChild(currentEmoji)
+}
+
+
+emojiesBtn.addEventListener('click', () => {
+    if (emojiesDiv.style.display === 'none') {
+        emojiesDiv.style.display = ''
+    } else {
+        emojiesDiv.style.display = 'none'
+    }
+})
+
+textarea.addEventListener('click', () => {
+    currentTextArea = textarea;
+})
+
+textAreaTitle.addEventListener('click', () => {
+    currentTextArea = textAreaTitle;
+})
+
+
+
+setInterval(() => {
+    emojiesBtn.textContent = emojies[Math.floor(Math.random() * (101 + 1))]
+}, 250)
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js" integrity="sha512-hkvXFLlESjeYENO4CNi69z3A1puvONQV5Uh+G4TUDayZxSLyic5Kba9hhuiNLbHqdnKNMk2PxXKm0v7KDnWkYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $('#myText').emojioneArea({
+        pickerPosition: 'right'
+    });
+</script>
+
+
+{% endblock %}

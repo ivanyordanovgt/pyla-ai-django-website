@@ -1,0 +1,29 @@
+
+<body>
+
+        <div class="sidebar">
+            <h1 style="text-align: center"> Forums </h1>
+                    <div class="actual-content">
+                        <div class="forums-list">
+                            {% for forum in forums_list %}
+                                <div class="forum-col">
+                                    <a href="{% url 'show forums posts' forum.pk %}">
+                                        {% if current_forum_title == forum.title or forum.pk == forum_id %}
+                                            <span style="color: indianred; font-size: 1.9vw">
+                                        {% endif %}
+                                        {{ forum.title }}
+
+                                    </a>
+                                </div>
+                                <br>
+                            {% endfor %}
+                        </div>
+                    </div>
+        </div>
+
+        <div class="test">
+
+    </div>
+</body>
+{% block sidebar %}
+{% endblock %}

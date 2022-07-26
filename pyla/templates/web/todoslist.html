@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'web/base/test.css' %}">
+<body>
+<h1>1203251521312312</h1>
+<br>
+<hr class="test-line">
+<div class="ListView-test">
+    <h1 class="test-type"> ListView </h1>
+    {% for object in object_list %}
+        {% if object.difficulty == 'Easy' %}
+            <p class="p-title"> {{ object.title }} </p>
+            <p>Description: {{ object.description }}</p>
+            <p>Difficulty: {{ object.difficulty }}</p>
+        {% endif %}
+
+        {% if object.difficulty == 'Medium' %}
+            <p class="p-title"> {{ object.title }} </p>
+            <p>Description: {{ object.description }}</p>
+            <p>Difficulty: {{ object.difficulty }}</p>
+        {% endif %}
+
+        {% if object.difficulty == 'Hard' %}
+            <p class="p-title"> {{ object.title }} </p>
+            <p>Description: {{ object.description }}</p>
+            <p>Difficulty: {{ object.difficulty }}</p>
+        {% endif %}
+
+
+        <hr>
+
+
+</div>
+{% endfor %}
+<br>
+<br>
+<hr class="test-line">
+</body>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<link rel="stylesheet" type="text/css" href="{% static '/user_activity/user-activity-page1.css' %}">
+
+<div class="activity-box">
+    {% if user.response_to_feedback %}
+        <div class="features">
+            <label><a href="{% url 'handle feedback page' %}">HANDLE FEEDBACKS</a></label>
+            <p> Handle feedback from users</p>
+        </div>
+    {% endif %}
+    {% if user.edit_index %}
+        <div class="features">
+        <label><a href="{% url 'configure index' 1 %}">CONFIGURE INDEX</a></label>
+        <p> Configure the index page </p>
+    </div>
+    {% endif %}
+    {% if user.edit_about_page %}
+       <div class="features">
+        <label><a href="{% url 'configure about pyla' 1 %}">CONFIGURE ABOUT PYLA PAGE</a></label>
+        <p> Configure about PyLa page.</p>
+    </div>
+    {% endif %}
+
+    {% if user.edit_subscription %}
+    <div class="features">
+        <label><a href="{% url 'configure subscriptions' %}">SUBSCRIPTION CONFIGURATOR</a></label>
+        <p> Configure subscriptions.</p>
+    </div>
+    {% endif %}
+
+    {% if user.change_profiles_info %}
+       <div class="features">
+        <label><a href="{% url 'configure subscriptions' %}">EDIT USER ACTIVITY</a></label>
+        <p> If you see this you have the rights to: <br>
+            Edit user's profiles/posts/comments.<br>
+            To edit a post, open the post and click Edit or Delete
+        </p>
+       </div>
+    {% endif %}
+
+
+    {% if user.edit_forums %}
+        <div class="features">
+        <label><a href="{% url 'configure subscriptions' %}">EDIT FORUMS</a></label>
+        <p> Edit forums name/content/. Configure user's access</p>
+       </div>
+    {% endif %}
+
+{#    {{ user.create_subscription }}#}
+{#    {{ user.response_to_feedback }}#}
+{#    {{ user.change_profiles_info }}#}
+{#    {{ user.change_profile_group }}#}
+{#    {{ user.edit_forums }}#}
+{#    {{ user.edit_posts }}#}
+{% endblock %}

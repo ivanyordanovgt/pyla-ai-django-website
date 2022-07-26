@@ -1,0 +1,15 @@
+{% extends 'base/base.html'%}
+{% block content %}
+<div class="edit-form">
+    <div class="forum">
+
+        {% include 'forums/side-bar.html' %}
+        <form class='' method="POST" enctype="multipart/form-data" action="{% url 'edit post' object.pk %}">
+            {% csrf_token %}
+            {{ form }}
+            <button> Edit </button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

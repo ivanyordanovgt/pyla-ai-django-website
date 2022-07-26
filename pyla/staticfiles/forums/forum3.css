@@ -1,0 +1,329 @@
+
+body {
+
+}
+
+.postsList {
+    width: 50vw;
+    margin-left: 12vw;
+    margin-top: 3vh;
+    padding-top: 2vh;
+}
+
+#seeMore {
+    margin-left: 1vw;
+}
+
+.postsList .post {
+    float: left;
+    width: 50vw;
+    font-size: 1vw;
+
+}
+
+
+.discussionBtn h3 {
+    color: purple;
+}
+
+
+
+#sidebar {
+    margin-top: 10vh;
+    float: left;
+}
+
+
+
+.discussionBtn {
+    float: right;
+    opacity: 1;
+    min-width: 38vw;
+    max-width: 45vw;
+    margin-right: 10vw;
+    margin-top: 7vh;
+    padding-bottom: 2vh;
+    background-color: rgb(170, 170, 170);
+
+}
+
+.discussionBtn img {
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 70%;
+    float: left;
+    margin-top: 0.7vh;
+    margin-left: 1vw;
+}
+
+.discussionBtn input {
+    float: left;
+    max-width: 30vw;
+    height: 4vh;
+    margin-left: 1vw;
+    margin-bottom: 0;
+    margin-top: 1.5vh;
+    padding: 6px;
+    color: gray;
+    font-family: "Droid Sans Mono Dotted";
+
+    background-color: lightgray;
+    border: none;
+}
+
+.discussionBtn input:hover {
+    border: 3px solid black;
+}
+
+.forum {
+    margin-top:13vh;
+    height: 50vh;
+    width: 60vw;
+    float: left;
+
+}
+
+.forum form {
+    background-color: antiquewhite;
+    width: 60vw;
+}
+
+.forum form img{
+    width: 4vw;
+    height: 3vw;
+    float: right;
+}
+
+.forum button {
+    background-color: transparent;
+    border: none;
+    width: 4vw;
+    float: right;
+}
+
+#blackOnTop {
+    background-color: black;
+    height: 3vh;
+    padding-left: 2vw;
+    margin-bottom: 2.5vh;
+}
+
+.forum form textarea {
+    border: 2px solid black;
+    border-radius: 3%;
+    width: 48vw;
+    margin-left: 1.4vw;
+    color: black;
+    font-size: 1vw;
+    margin-bottom: 0;
+}
+
+.forum form textarea::placeholder {
+    font-size: 1.2vw;
+    color: red;
+}
+
+.forum form input {
+    border: 2px solid black;
+    border-radius: 3%;
+    width: 48vw;
+    margin-left: 1.4vw;
+    color: black;
+
+}
+
+
+.forum .sidebar {
+    float: left;
+    margin-top: 1vh;
+    margin-left: 5vw;
+    width: 15vw;
+    height: 70vh;
+    background-color: rgba(1, 1, 1,0.3);
+}
+
+.actual-content {
+    padding-left: 3vw;
+}
+
+.posts {
+    float: right;
+}
+
+.forum h1 {
+    color: red;
+}
+
+.forums-list {
+}
+
+.forums-list a {
+    text-decoration: none;
+    color: gray;
+}
+
+.what-would-you-like-to-share-or-ask-box {
+    margin-left: 35vw;
+    margin-top: 10vh;
+    margin-right: 0;
+    width: 30vw;
+    height: 1px;
+    /*background-color: antiquewhite;*/
+
+}
+
+
+.what-would-you-like-to-share-or-ask-box img {
+    border-radius: 50%;
+    width: 4vw;
+    height: 4vw;
+    margin-top: 1.6vh;
+}
+
+.ask-box-image {
+
+    float: left;
+    margin-left: 1vw;
+    padding: 3px;
+
+
+}
+
+.ask-box-text {
+    color: indianred;
+    float: right;
+    font-size: 1vw;
+    letter-spacing: 0.1vw;
+    margin-right: 1vw;
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+}
+
+.ask-box-options {
+    margin-right: 1px;
+    font-size: 1.4vw;
+
+}
+
+.ask-box-options a{
+float: bottom;
+   color: dodgerblue;
+    text-decoration: none;
+}
+
+.comment {
+    float: left;
+}
+
+#commentBox {
+    margin-top: 15vh;
+    padding-bottom: 2vh;
+    width: 20vw;
+}
+
+#content:hover {
+    background-color: rgb(120, 120, 120);
+}
+
+#comment h2 {
+    color: rgba(80, 80, 80);
+    height: 1px;
+    float: left;
+    font-size: 0.9vw;
+    margin-left: 0.6vw;
+    margin-top: 0.4vh;
+
+}
+
+#comment img {
+    width: 1.7vw;
+    height: 3vh;
+    float: left;
+    margin-left: 1vw;
+    padding-bottom: 0.7vh;
+}
+
+/* POSTS CSS FROM HERE TO DOWN */
+
+.infoBox{
+    float: right;
+    height: 35vh;
+    width: 17.7vw;
+    border: 3px solid black;
+    border-top: none;
+    border-radius: 2%;
+    margin-top: 12vh;
+    margin-right: 16vw;
+    background-color: antiquewhite;
+}
+
+#createdOn {
+    font-size: 0.8vw;
+    margin-left: 0.6vw;
+}
+
+.createdOn p {
+    text-align: center;
+    margin-right: 2vw;
+    border: 1px solid black;
+    border-radius: 6%;
+
+    background-color: black;
+    color: wheat;
+    padding-top: 0.4vw;
+    padding-bottom: 0.4vw;
+    width: 10vw;
+
+    font-family: "Microsoft YaHei UI";
+}
+
+.createdOn {
+    margin-left: 2.7vw;
+}
+
+.infoBox p {
+    margin-left: 0.7vw;
+}
+
+.infoBox span {
+    color: darkred;
+    font-size: 1.8vw;
+    height: 1px;
+}
+
+.rules span {
+    color: darkred;
+    font-size: 1.8vw;
+    height: 1px;
+}
+
+#aboutForum {
+    color: navajowhite;
+    font-size: 1vw;
+    margin-right: 1vw;
+    width: 17.8vw;
+    background-color: black;
+}
+
+#aboutForum h1 {
+    margin: 0;
+    font-size: 1.2vw;
+    margin-left: 0.5vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.rules {
+    float: right;
+    border: 3px solid black;
+    border-top: none;
+    margin-top: 10vh;
+    width: 17.5vw;
+    margin-left: 0;
+    background-color: antiquewhite;
+    padding-bottom: 4vh;
+}
+
+.rules h1 {
+    text-align: center;
+    margin-right: 2vw;
+}

@@ -1,0 +1,111 @@
+
+.post {
+    width: 90vw;
+    background-color: lightgray; cursor: crosshair;
+
+}
+
+.posted_by {
+    font-size: 2vw;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.postsList {
+
+}
+
+.description {
+    font-size: 4vw;
+}
+
+#content h3{
+    font-size: 1vw;
+}
+
+#content {
+    width: 30vw;
+    height: 10vh;
+}
+
+#content:hover {
+    background-color: transparent;
+}
+
+#content img {
+    padding-right: 0.6vw;
+}
+
+.post-content {
+}
+
+.commentBoxList {
+    margin-top: 40vh;
+    margin-left: 30vh;
+    width: 40vw;
+    height: 40vh;
+    background-color: red;
+}
+
+.infoBox {
+
+}
+
+.commentForm {
+    width: 30vw;
+}
+
+#comment {
+    height: 2vh;
+}
+
+.post {
+    padding-bottom: 2vh;
+    margin-bottom: 5vh;
+}
+
+#commentsBox .post{
+    margin-bottom: 1vh;
+
+}
+
+#commentsBox {
+    overflow: scroll;
+    overflow-x: hidden;
+    max-height: 70vh;
+}
+#commentsBox::-webkit-scrollbar {
+  display: none;
+}
+
+.commentForm button {
+    position: absolute;
+    margin-left: 1vw;
+    background: none;
+    border: none;
+    margin-top: 7vh;
+}
+
+.commentForm textarea {
+    background: lightgray;
+    color: black;
+    width: 40vw;
+    margin-left: 0;
+}
+
+.commentForm {
+    margin-left: 1vw;
+}
+
+.commentForm textarea::placeholder {
+    color: black;
+}
+
+.commentsBox {
+}
+
+.commentForm {
+    width: 40vw;
+    margin-left: 15vw;
+    margin-top: 20vh;
+}

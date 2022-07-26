@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST" action="{% url 'edit view' todo.pk %}">
+    <div>
+    {% csrf_token %}
+    {{ form }}
+    <button> Save </button>
+        </div>
+
+</form>
+
+
+</body>
+</html>

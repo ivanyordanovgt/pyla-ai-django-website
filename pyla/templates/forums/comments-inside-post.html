@@ -1,0 +1,120 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+    <br><br><br><br>
+
+
+
+<div class="infoBar" style="padding-left: 10vw">
+    <div class="infoBox" style="position: absolute; margin-left: 65vw">
+
+        <div id="aboutForum" style="">
+            <h1> About forum</h1>
+        </div>
+
+        <p> {{ forumDesc }}</p>
+        <p> Posts: <span>{{ postsCount }}</span></p>
+        <h1 id="createdOn"> Created on {{ forumObj.date }}</h1>
+
+
+        <div class="rules">
+            <div id="aboutForum">
+            <h1> Rules </h1>
+        </div>
+
+        <p>
+            1. Don't be racist
+        </p>
+        <p> 2. Don't be too rude </p>
+        <p> 3. Don't promote any products </p>
+        <p> 4. No death threats </p>
+        <p> 5. No personal info </p>
+        <p> 6. No begging </p>
+
+
+        </div>
+    </div>
+
+</div>
+<link rel="stylesheet" type="text/css" href="{% static '/forums/commentsStyle1.css' %}">
+<div class="postsList" style="margin-top: 11vh">
+    <div class="post" style="width: 55vw">
+                <div class="post-title" style="width: 50vw">
+                    <h1 class="posted_by" > Posted by
+                        <a href="{% url 'profile view' post.user.pk %}" style="text-decoration: none;
+                        color: darkred;
+                        ">
+                            {{ post.user.nickname }}</a>
+                        at {{ post.date }}
+                    </h1>
+                </div>
+                <div class="post-content" style="width: 50vw">
+                    <h1 class="title" style="font-size: 1.5vw; width: 50vw">{{ post.title }}</h1>
+                    <p class="description" id="desc"
+                       style="color: black; width: 50vw; font-size: 1.5vw; padding-bottom: 1.3vh"> {{ post.description}}
+                    </p>
+                    <p id="descFullText" style="display: none;"> {{ post.description }}</p>
+
+                </div>
+
+            <div id="comment" style="width: 40vw">
+                <div id="commentBox">
+                    <div id="ok">
+                    <div id="content">
+                        <img src="{% static 'forums/images/ikonka.png' %}">
+                        <h3 style="width: 40vw">  {{ post.comment_set.count }} Comments </h3>
+                    </div>
+
+                    </div>
+                </div>
+
+            </div></div></div>
+
+
+<div class="">
+    <form class='commentForm'
+          method="POST"
+          enctype="multipart/form-data" action="{% url 'show posts comments' post.pk %}" style="margin-left: 12vw">
+
+            {% csrf_token %}
+            {% for error in form.description.errors %}
+
+                <p style="color: red">{{ error }}</p>
+             {% endfor %}
+            {{ form.description }}
+            <button> post </button>
+    </form>
+<div id="commentsBox">
+<div class="postsList">
+        {% for comment in post.comment_set.all %}
+            <div class="post" style="margin-right: 10vw">
+                <div class="post-title">
+{#                    style="background-color: lightgray; cursor: pointer;"  onclick='location.href="{% url 'show posts comments' post.pk %}";'#}
+{#                    {% if post.user.profile.profile_picture %}#}
+{#                            <img src="{{ post.user.profile.profile_picture.url }}" class="round-image">#}
+{#                        {% else %}#}
+{#                            <img src="https://images.pexels.com/photos/1543793/pexels-photo-1543793.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="round-image">#}
+{#                        {% endif %}#}
+                    <h1 class="posted_by" > Posted by
+                        <a href="{% url 'profile view' post.user.pk %}" style="text-decoration: none;
+                        color: darkred;
+                        "
+                        >
+                            {{ comment.user.nickname }}</a>
+                        at {{ comment.date }}
+                    </h1>
+                </div>
+                <div class="post-content">
+                    <p class="description" id="desc" style="color: black"> {{ comment.description }}
+{#                  {% url 'show posts comments' post.pk %} #}
+                    </p>
+                    <p id="descFullText" style="display: none;"> {{ comment.description }}</p>
+
+                </div>
+
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}

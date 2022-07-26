@@ -1,0 +1,24 @@
+{% extends 'testing/test_base.html' %}
+{% block content %}
+<style>
+
+    h1 {
+        color: purple;
+        font-size: 4vw;
+    }
+
+    h2 {
+        color: red;
+        font-size: 4vw;
+    }
+</style>
+<div>
+
+    <h1>
+        {{ object.title }}
+    </h1>
+    <h2>
+        {{ object.description }}
+    </h2>
+</div>
+{% endblock %}

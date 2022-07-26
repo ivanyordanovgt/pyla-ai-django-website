@@ -1,0 +1,27 @@
+
+.replies-box {
+    text-align: center;
+    margin-left: 7vw;
+}
+
+.replies-box h1 {
+    color: indianred;
+    font-size: 3.4vw;
+
+}
+
+.edit-profile-box-moto span {
+    font-size: 1.1vw;
+}
+
+.edit-profile-box-moto a {
+    font-size: 3vw;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 27vw;
+    color: indianred;
+
+}
+.edit-profile-box-moto a:hover {
+    color: darkred;
+}

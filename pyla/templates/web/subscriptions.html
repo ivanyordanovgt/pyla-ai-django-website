@@ -1,0 +1,41 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load filters %}
+{% block content %}
+<head>
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/subscriptions/subscription.css' %}">
+    <style>
+
+    </style>
+</head>
+<body>
+
+<section id="catalogPage">
+
+    <h1 class="h1-center ">SUBSCRIPTIONS</h1>
+    {% for object in obj_list %}
+        <a href="{% url 'subscription detail' object.pk %}" class="card-box-hover">
+        <div class="card-box">
+        {% if object.profile_picture %}
+            <img src="{{ object.profile_picture.url }}" alt="Cover Image">
+        {% endif %}
+            <div>
+                <div class="text-center">
+                    <p class="subscription-title">{{ object.title }}</p>
+                    <h1 class="h1-feature"> FEATURES </h1>
+                <br>
+                    <div class="features">
+                        {% for feature in features|feature_selector:object.title %}
+                            <p>* {{ feature|rework }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    {% endfor %}
+</section>
+</body>
+
+{% endblock %}

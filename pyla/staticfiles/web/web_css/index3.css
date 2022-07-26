@@ -1,0 +1,64 @@
+
+
+.blur-image {
+    filter: blur(8px);
+}
+
+.moto-box {
+    text-align: center;
+    width: 80vw;
+    margin-left: 8vw;
+
+}
+
+.moto-box-content {
+
+}
+
+.moto-box h1 {
+    font-family: "Segoe UI Emoji", serif;
+    color: darkorange;
+    font-size: 2vw;
+}
+
+.moto-box h2 {
+    color: darkorange;
+    font-size: 3vw;
+}
+
+.moto-box textarea {
+    background-color: transparent;
+    color: darkorange;
+    font-size: 2vw;
+    height: 10vh;
+    border: none;
+    margin-left: 8vw;
+}
+
+.moto-box p {
+    color: indianred;
+    font-size: 2vw;
+}
+
+.brawl-stars-span {
+    color: mediumvioletred;
+    font-size: 2vw;
+}
+
+.moto-box span {
+    font-family: "Segoe UI Emoji", serif;
+    font-size: 2vw;
+}
+.open-cv-span {
+    color: mediumvioletred;
+}
+
+.players-span {
+    color: mediumvioletred;
+}
+
+.content-box {
+    margin-left: 1vw;
+    margin-top: 20vh;
+}
+

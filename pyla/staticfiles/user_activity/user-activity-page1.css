@@ -1,0 +1,42 @@
+
+body {
+    height: 140vh;
+}
+
+.activity-box {
+    background-color: black;
+    margin-top: 10vh;
+    margin-left: 10vw;
+    border: 0.7vw solid rgb(40, 40, 40);
+    border-radius: 2px;
+    padding-top: 1.5vw;
+    max-width: 80vw;
+
+}
+
+.activity-box a {
+    color: rgb(210, 210, 210);
+    text-decoration: none;
+    font-size: 2vw;
+
+}
+
+.activity-box p {
+    color: #05a83b;
+    margin: 1px;
+    font-size: 1.6vw;
+}
+
+.activity-box .features {
+    padding: 1vw;
+    background-color: rgb(20, 21, 23);
+    border-bottom: 3px solid black;
+}
+
+.activity-box .feedback:hover a {
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+}
+
+.activity-box .feedback:hover p {
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+}

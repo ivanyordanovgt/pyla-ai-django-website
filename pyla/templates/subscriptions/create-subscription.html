@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/manage_profiles/profile_css/edit_profile1.css' %}">
+    <form method="POST" enctype="multipart/form-data" action="{% url 'create subscription' %}">
+    <div class="container">
+    {% csrf_token %}
+        <div style="">
+        <h1> CREATE A SUBSCRIPTION </h1>
+            <div class="edit-profile-box">
+                <div class="edit-profile-box-moto">
+                    {{ form }}
+                </div>
+                <button> Create </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

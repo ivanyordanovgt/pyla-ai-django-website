@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/user_activity/user-activity-page1.css' %}">
+
+<div class="activity-box">
+
+    <div class="features">
+        <label><a href="{% url 'view feedback activity' request.user.pk %}">FEEDBACK MESSAGES</a></label>
+        <p> See all your feedback messages that has been sent to staff.</p>
+    </div>
+
+    <div class="features">
+        <label><a href="{% url 'show personal posts' %}">POSTS</a></label>
+        <p> See a list of your posts and edit/delete them.</p>
+    </div>
+
+     <div class="features">
+        <label><a href="{% url 'view feedback activity' request.user.pk %}">PAYMENTS</a></label>
+        <p> History of all your payments.</p>
+    </div>
+
+    <div class="features">
+        <label><a href="{% url 'chats' %}">MESSENGER</a></label>
+        <p> Chat with other users of PyLa.</p>
+    </div>
+
+</div>
+
+
+
+{% endblock %}

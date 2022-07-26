@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+{% load filters %}
+{% load static %}
+{% block content %}
+{% load filters %}
+<link rel="stylesheet" type="text/css" href="{% static '/user_activity/user-activity-page1.css' %}">
+
+<div class="activity-box" style="float: left">
+
+    {% for question in object_list %}
+    <div class="features">
+        <div class="feedback">
+            <label><a href="{% url 'view feedback message' question.pk %}">{{ question.title }}</a></label>
+            <p>{{ question.status|boolean_to_status }}</p>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+
+
+{% endblock %}
+<a href="{% url 'view feedback message' message.pk %}">{{ message.title }} {{ message.status }}</a>

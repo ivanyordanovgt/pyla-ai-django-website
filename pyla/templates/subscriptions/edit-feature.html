@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        body {
+            height: 200vh;
+        }
+
+    </style>
+<link rel="stylesheet" type="text/css" href="{% static '/manage_profiles/profile_css/edit_profile1.css' %}">
+
+    <form method="POST" action="{% url 'edit feature' object.pk %}">
+    <div class="container">
+    {% csrf_token %}
+        <div style="">
+        <h1> EDIT {{ object.name|upper }} </h1>
+            <div class="edit-profile-box">
+                <div class="edit-profile-box-moto">
+                    <br>
+                    {{form}}
+                </div>
+
+                <div>
+
+                </div>
+        </div>
+            </div>
+
+
+
+    <button class="save-button"> Save </button>
+        <br>
+        <br>
+        <br>
+    <a href="{% url 'delete feature' object.pk %}"> DELETE </a>
+        </div>
+    </form>
+{% endblock %}

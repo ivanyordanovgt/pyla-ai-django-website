@@ -1,0 +1,79 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+
+    .forum {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 120vh;
+        width: 80vw;
+    }
+
+    .forum::-webkit-scrollbar {
+  display: none;
+}
+</style>
+
+<div style="margin-top: 3vh; margin-left: 20vw; position: absolute">
+<h1 style="text-align: center; color: indianred"> Here you can see all of your posts.</h1>
+</div>
+<div class="forum">
+
+{#    <div class="discussionBtn" onclick='location.href="{% url 'create post' forum_pk %}";'>#}
+{##}
+{#        <img src="{{ request.user.profile.profile_picture.url }}" style="">#}
+{##}
+{#        <input value="Create a post">#}
+{#    </div>#}
+
+
+    <div class="postsList" style="margin-left: 20vw; margin-top: 1vh; padding-top: 1vh">
+        {% for post in object_list %}
+            <div class="post" style="background-color: lightgray; cursor: crosshair;">
+                <div class="post-title">
+{#                    style="background-color: lightgray; cursor: pointer;"  onclick='location.href="{% url 'show posts comments' post.pk %}";'#}
+{#                    {% if post.user.profile.profile_picture %}#}
+{#                            <img src="{{ post.user.profile.profile_picture.url }}" class="round-image">#}
+{#                        {% else %}#}
+{#                            <img src="https://images.pexels.com/photos/1543793/pexels-photo-1543793.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="round-image">#}
+{#                        {% endif %}#}
+                    <h1 class="posted_by" > Posted by
+                        <a href="{% url 'profile view' post.user.pk %}" style="text-decoration: none;
+                        color: darkred;
+                        "
+                        >
+                            {{ post.user.nickname }}</a>
+                        at {{ post.date }}
+                    </h1>
+                </div>
+                <div class="post-content">
+                    <h1 class="title">{{ post.title }}</h1>
+                    <p class="description" id="desc" style="color: black"> {{ post.description }}
+{#                  {% url 'show posts comments' post.pk %} #}
+                    </p>
+                    <p id="descFullText" style="display: none;"> {{ post.description }}</p>
+
+                </div>
+
+            <a href="{% url 'show posts comments' post.pk %}" style="color: black"><div id="comment">
+                <div id="commentBox">
+                    <div id="content">
+                        <img src="{% static 'forums/images/ikonka.png' %}">
+                        <h2>  {{ post.comment_set.count }} Comments </h2>
+{#                        {% for comment in post.comment_set.all %}#}
+{#                            {{ comment }}#}
+{#                            #}
+{##}
+{#                        {% endfor %}#}
+                    </div>
+
+                    </div>
+                </div>
+            </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

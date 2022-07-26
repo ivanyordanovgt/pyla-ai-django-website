@@ -1,0 +1,61 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+
+    body {
+        height: 120vh;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="{% static '/manage_profiles/profile_css/profile_css.css' %}">
+<div class="profile">
+    <div class="card-container">
+        <span class="pro">
+        {% if object.user.profile.staff_group %}
+
+                {{ object.user.profile.staff_group }}
+
+
+        {% elif object.user.is_superuser %}
+            ADMINISTRATOR
+        {% else %}
+            USER
+        {% endif %}
+        </span>
+        {% if object.profile_picture  %}
+            <img class="round" src="{{ object.profile_picture.url }}" alt="{{ object.profile_picture.url }}" />
+        {% else %}
+            <img class="round" src="https://images.pexels.com/photos/1543793/pexels-photo-1543793.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="user" />
+        {% endif %}
+        <h3>{{ object.user.nickname }}</h3>
+    {% if object.moto %}
+        <h6>{{ object.moto }}</h6>
+        <br>
+    {% endif %}
+        {% if object.description %}
+        <p class="desc">{{ object.description }}</p>
+        {% endif %}
+        <div class="buttons">
+            {% if CRUD_ACCESS %}
+                <a href="{% url 'edit profile' object.user.pk %}" class="primary"> EDIT PROFILE</a>
+                {% if administrator %}
+                    <a href="#">Administrator!</a>
+                    <{% endif %}
+            {% else %}
+                <a href="#" class="primary"> ADD FRIEND </a>
+            {% endif %}
+        </div>
+        <div class="skills">
+            <h6>Badges</h6>
+            <ul>
+                <li>CURRENTLY IN PROGRESS</li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div><br><br><br></div>
+{{ object.staff_group. }}
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+{% csrf_token %}
+<body>
+<form class='' style="width: 51vw; margin-left: 24vw; margin-top: 12vw" method="POST" enctype="multipart/form-data" action="{% url 'send code and confirm' %}">
+
+<h1 style="font-size: 14px; color: rosybrown"> An email has been sent to you with the confirmation code</h1>
+<h1 style="color: indianred"> Confirmation key: </h1>
+    {% csrf_token %}
+    {% if form.errors %}
+        <h2 style="color: red; font-size: 1px"> Incorrect key. Please double check it.</h2>
+    {% endif %}
+    {{ form.confirmationKey }}
+    <button style="margin-left: 20vw"> Confirm </button>
+</form>
+</body>
+
+{% endblock %}

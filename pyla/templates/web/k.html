@@ -1,0 +1,660 @@
+
+<!DOCTYPE html>
+<html lang="bg-BG">
+<head>
+<meta charset="UTF-8">
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="icon" href="">
+<style>
+			@import url(https://fonts.googleapis.com/css?family=Open+Sans);    
+			
+			button,
+		.button,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"],
+		.label,
+		.label:visited,
+		.pagination ul li a,
+		.widget_categories ul li a,
+		.comment-reply-link,
+		a.tag-cloud-link,
+		.template-actors li a {
+			background: -moz-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 70%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 70%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a62b2b2b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+			-moz-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+			-webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+			-o-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+			box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+		}
+		input[type="text"],
+		input[type="email"],
+		input[type="url"],
+		input[type="password"],
+		input[type="search"],
+		input[type="number"],
+		input[type="tel"],
+		input[type="range"],
+		input[type="date"],
+		input[type="month"],
+		input[type="week"],
+		input[type="time"],
+		input[type="datetime"],
+		input[type="datetime-local"],
+		input[type="color"],
+		select,
+		textarea,
+		.wp-editor-container {
+			-moz-box-shadow: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 5px black inset;
+			-webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 5px black inset;
+			-o-box-shadow: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 5px black inset;
+			box-shadow: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 5px black inset;
+		}
+		#site-navigation {
+			background: #222222;
+			background: -moz-linear-gradient(top, #222222 0%, #333333 50%, #222222 51%, #151515 100%);
+			background: -webkit-linear-gradient(top, #222222 0%,#333333 50%,#222222 51%,#151515 100%);
+			background: linear-gradient(to bottom, #222222 0%,#333333 50%,#222222 51%,#151515 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222222', endColorstr='#151515',GradientType=0 );
+			-moz-box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.12);
+			-webkit-box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.12);
+			-o-box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.12);
+			box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.12);
+		}
+		#site-navigation > ul > li:hover > a,
+		#site-navigation ul li.current-menu-item a {			
+			background: -moz-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 70%);
+			background: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 70%);
+			background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 70%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a62b2b2b', endColorstr='#00000000',GradientType=0 );
+			-moz-box-shadow: inset 0px 0px 2px 0px #000000;
+			-webkit-box-shadow: inset 0px 0px 2px 0px #000000;
+			-o-box-shadow: inset 0px 0px 2px 0px #000000;
+			box-shadow: inset 0px 0px 2px 0px #000000;
+			filter:progid:DXImageTransform.Microsoft.Shadow(color=#000000, Direction=NaN, Strength=2);
+		}
+		.rating-bar,
+		.categories-list .thumb-block .entry-header,
+		.actors-list .thumb-block .entry-header,
+		#filters .filters-select,
+		#filters .filters-options {			
+			background: -moz-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 70%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 70%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */	
+			-moz-box-shadow: inset 0px 0px 2px 0px #000000;
+			-webkit-box-shadow: inset 0px 0px 2px 0px #000000;
+			-o-box-shadow: inset 0px 0px 2px 0px #000000;
+			box-shadow: inset 0px 0px 2px 0px #000000;
+			filter:progid:DXImageTransform.Microsoft.Shadow(color=#000000, Direction=NaN, Strength=2);			
+		}
+		.breadcrumbs-area {			
+			background: -moz-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 70%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 70%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		}
+		
+	.site-title a {        
+		font-family: Open Sans;
+		font-size: 36px;
+	}
+	.site-branding .logo img {
+		max-width: 300px;
+		max-height: 120px;
+		margin-top: 0px;
+		margin-left: 0px;
+	}
+	a,
+	.site-title a i,
+	.thumb-block:hover .rating-bar i,
+	.categories-list .thumb-block:hover .entry-header .cat-title:before,
+	.required,
+	.like #more:hover i,
+	.dislike #less:hover i,
+	.top-bar i:hover,
+	.main-navigation .menu-item-has-children > a:after,
+	.menu-toggle i,
+	.main-navigation.toggled li:hover > a,
+	.main-navigation.toggled li.focus > a,
+	.main-navigation.toggled li.current_page_item > a,
+	.main-navigation.toggled li.current-menu-item > a,
+	#filters .filters-select:after,
+	.morelink i,
+	.top-bar .membership a i,
+	.thumb-block:hover .photos-count i {
+		color: #09ABBA;
+	}
+	button,
+	.button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"],
+	.label,
+	.pagination ul li a.current,
+	.pagination ul li a:hover,
+	body #filters .label.secondary.active,
+	.label.secondary:hover,
+	.main-navigation li:hover > a,
+	.main-navigation li.focus > a,
+	.main-navigation li.current_page_item > a,
+	.main-navigation li.current-menu-item > a,
+	.widget_categories ul li a:hover,
+	.comment-reply-link,
+	a.tag-cloud-link:hover,
+	.template-actors li a:hover {
+		border-color: #09ABBA!important;
+		background-color: #09ABBA!important;
+	}
+	.rating-bar-meter,
+	.vjs-play-progress,
+	#filters .filters-options span:hover,
+	.bx-wrapper .bx-controls-direction a,
+	.top-bar .social-share a:hover,
+	.thumb-block:hover span.hd-video,
+	.featured-carousel .slide a:hover span.hd-video,
+	.appContainer .ctaButton {
+		background-color: #09ABBA!important;
+	}
+	#video-tabs button.tab-link.active,
+	.title-block,
+	.widget-title,
+	.page-title,
+	.page .entry-title,
+	.comments-title,
+	.comment-reply-title,
+	.morelink:hover {
+		border-color: #09ABBA!important;
+	}    
+
+	/* Small desktops ----------- */
+	@media only screen  and (min-width : 64.001em) and (max-width : 84em) {
+		#main .thumb-block {
+			width: 20%!important;
+		}
+	}
+
+	/* Desktops and laptops ----------- */
+	@media only screen  and (min-width : 84.001em) {
+		#main .thumb-block {
+			width: 20%!important;
+		}
+	}
+
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-102996883-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-102996883-1');
+</script>
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<title>Филми Ужаси онлайн</title>
+<meta name="description" content="Гледай най-интересните филми Ужаси онлайн безплатно" />
+<link rel="canonical" href="https://www.filmi2k.com/category/ujasi/" />
+<link rel="next" href="https://www.filmi2k.com/category/ujasi/page/2/" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.filmi2k.com/#website","url":"https://www.filmi2k.com/","name":"FILMI2K.COM","description":"Гледай филми онлайн","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.filmi2k.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"bg-BG"},{"@type":"CollectionPage","@id":"http://www.filmi2k.com/category/ujasi/#webpage","url":"http://www.filmi2k.com/category/ujasi/","name":"Филми Ужаси онлайн","isPartOf":{"@id":"https://www.filmi2k.com/#website"},"description":"Гледай най-интересните филми Ужаси онлайн безплатно","breadcrumb":{"@id":"http://www.filmi2k.com/category/ujasi/#breadcrumb"},"inLanguage":"bg-BG","potentialAction":[{"@type":"ReadAction","target":["http://www.filmi2k.com/category/ujasi/"]}]},{"@type":"BreadcrumbList","@id":"http://www.filmi2k.com/category/ujasi/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Филми Ужаси"}]}]}</script>
+<link rel='dns-prefetch' href='//www.filmi2k.com' />
+<link rel='dns-prefetch' href='//s-img.steepto.com' />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://www.filmi2k.com/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='bradmax-player-css' href='https://www.filmi2k.com/wp-content/plugins/bradmax-player/assets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css' href='https://www.filmi2k.com/wp-content/plugins/contact-form-7/includes/css/styles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wpst-font-awesome-css' href='https://www.filmi2k.com/wp-content/themes/retrotube/assets/stylesheets/font-awesome/css/font-awesome.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wpst-style-css' href='https://www.filmi2k.com/wp-content/themes/retrotube/style.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.filmi2k.com/wp-content/plugins/bradmax-player/assets/js/default_player.js' id='bradmax-player-js'></script>
+<script type='text/javascript' src='https://www.filmi2k.com/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://www.filmi2k.com/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+<link rel="https://api.w.org/" href="https://www.filmi2k.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.filmi2k.com/wp-json/wp/v2/categories/12" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.filmi2k.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.filmi2k.com/wp-includes/wlwmanifest.xml" />
+<script language="javascript" type="text/javascript">
+			 var style = document.createElement("style");
+			 style.type = "text/css";
+			 style.id = "antiClickjack";
+			 if ("cssText" in style){
+			   style.cssText = "body{display:none !important;}";
+			 }else{
+			   style.innerHTML = "body{display:none !important;}";
+			}
+			document.getElementsByTagName("head")[0].appendChild(style);
+
+			if (top === self) {
+			 var antiClickjack = document.getElementById("antiClickjack");
+			 antiClickjack.parentNode.removeChild(antiClickjack);
+			} else {
+			 top.location = self.location;
+			}
+		  </script><link rel="icon" href="https://www.filmi2k.com/wp-content/uploads/2017/08/movies-150x150.png" sizes="32x32" />
+<link rel="icon" href="https://www.filmi2k.com/wp-content/uploads/2017/08/movies.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.filmi2k.com/wp-content/uploads/2017/08/movies.png" />
+<meta name="msapplication-TileImage" content="https://www.filmi2k.com/wp-content/uploads/2017/08/movies.png" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+<body class="archive category category-ujasi category-12 custom-background hfeed">
+<div id="page">
+<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+<header id="masthead" class="site-header" role="banner">
+<div class="site-branding row">
+<div class="logo">
+<p class="site-title"><a href="https://www.filmi2k.com/" rel="home"><i class="fa fa-play-circle"></i> FILMI2K.COM</a></p>
+
+<p class="site-description">Гледай филми онлайн</p>
+</div>
+<div class="header-search ">
+<form method="get" id="searchform" action="https://www.filmi2k.com/">
+<input class="input-group-field" value="Търсене..." name="s" id="s" onfocus="if (this.value == 'Търсене...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Търсене...';}" type="text" />
+<input class="button fa-input" type="submit" id="searchsubmit" value="&#xf002;" />
+</form>
+</div>
+</div>
+<nav id="site-navigation" class="main-navigation " role="navigation">
+<div id="head-mobile"></div>
+<div class="button-nav"></div>
+<ul id="menu-menu" class="row"><li id="menu-item-27013" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-27013"><a title="Начална страница" href="https://www.filmi2k.com/">Начало</a></li>
+<li id="menu-item-15" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15"><a title="Екшън филми" href="https://www.filmi2k.com/category/ekshan/">Екшън</a></li>
+<li id="menu-item-16" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16"><a title="Комедия , Романтичен филми" href="https://www.filmi2k.com/category/filmi-komediya/">Комедия</a></li>
+<li id="menu-item-17" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17"><a title="Фантастика филми" href="https://www.filmi2k.com/category/fantastika/">Фантастика</a></li>
+<li id="menu-item-18" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-18"><a title="Филми Ужаси" href="https://www.filmi2k.com/category/ujasi/" aria-current="page">Ужаси</a></li>
+<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19"><a title="Приключенски филми" href="https://www.filmi2k.com/category/priklyuchenski-filmi/">Приключенски</a></li>
+<li id="menu-item-21" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21"><a title="Драма филми" href="https://www.filmi2k.com/category/drama/">Драма</a></li>
+<li id="menu-item-20" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20"><a title="Трилър филми" href="https://www.filmi2k.com/category/trilar/">Трилър</a></li>
+<li id="menu-item-23" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23"><a title="Анимация филми" href="https://www.filmi2k.com/category/animatsiya/">Анимация</a></li>
+<li id="menu-item-1259" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1259"><a title="Уестърн филми" href="https://www.filmi2k.com/category/western/">Уестърн</a></li>
+<li id="menu-item-4082" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4082"><a title="Военни филми" href="https://www.filmi2k.com/category/voenni/">Военни</a></li>
+<li id="menu-item-2369" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2369"><a title="Индийски филми" href="https://www.filmi2k.com/category/indiiski/">Индийски</a></li>
+<li id="menu-item-25217" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25217"><a title="Топ 250 IMDb филми" href="https://www.filmi2k.com/tag/imdb-top-250/">Топ IMDb</a></li>
+<li id="menu-item-26081" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26081"><a title="Научно-популярни филми" href="https://www.filmi2k.com/category/nauchno-populyarni/">Документални</a></li>
+<li id="menu-item-23441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23441"><a href="https://www.filmi2k.com/seriali-onlayn/">Сериали</a></li>
+</ul> </nav>
+<div class="clear"></div>
+</header>
+<div id="content" class="site-content row">
+<div id="primary" class="content-area ">
+<main id="main" class="site-main " role="main">
+<header class="page-header">
+<h1 class="widget-title"><i class="fa fa-folder-open"></i>Категория: <span>Филми Ужаси</span></h1><div class="archive-description"><p>Филми Ужаси онлайн</p>
+</div> <div id="filters">
+<div class="filters-select">Най-нови филми <div class="filters-options">
+<span><a class="" href="/category/ujasi/?filter=most-viewed">Най-гледани филми</a></span> <span><a class="" href="/category/ujasi/?filter=popular">Най-харесвани филми</a></span>
+<span><a class="" href="/category/ujasi/?filter=latest">Най-нови филми</a></span>
+</div>
+</div>
+</div>
+</header>
+<div class="videos-list">
+<article id="post-41922" class="thumb-block full-width post-41922 post type-post status-publish format-video hentry category-ujasi tag-filmi-2021 tag-wyrmwood-apocalypse tag-uirmuud-apokalipsis post_format-post-format-video">
+<a href="https://www.filmi2k.com/wyrmwood-apocalypse-uirmuud-apokalipsis-2021/" title="Wyrmwood: Apocalypse / Уирмууд: Апокалипсис (2021)">
+<div class="post-thumbnail ">
+<img data-src="/wp-content/uploads/2022/04/Wyrmwood-Apocalypse-2021.jpg" alt="Wyrmwood: Apocalypse / Уирмууд: Апокалипсис (2021)" src="https://www.filmi2k.com/wp-content/themes/retrotube/assets/img/px.gif">
+<span class="hd-video">HD</span> </div>
+<div class="rating-bar ">
+<div class="rating-bar-meter" style="width: 85%;"></div>
+<i class="fa fa-thumbs-up" aria-hidden="true"></i> <span>85%</span>
+</div>
+<header class="entry-header">
+<span>Wyrmwood: Apocalypse / Уирмууд: Апокалипсис (2021)</span>
+</header>
+</a>
+</article>
+<article id="post-41842" class="thumb-block full-width post-41842 post type-post status-publish format-video hentry category-ujasi tag-filmi-2021 tag-girl-next tag-sledvashtoto-momiche post_format-post-format-video">
+<a href="https://www.filmi2k.com/girl-next-sledvashtoto-momiche-2021/" title="Girl Next / Следващото момиче (2021)">
+<div class="post-thumbnail ">
+<img data-src="/wp-content/uploads/2022/04/Girl-Next-2021.jpg" alt="Girl Next / Следващото момиче (2021)" src="https://www.filmi2k.com/wp-content/themes/retrotube/assets/img/px.gif">
+<span class="hd-video">HD</span> </div>
+<div class="rating-bar ">
+<div class="rating-bar-meter" style="width: 48%;"></div>
+<i class="fa fa-thumbs-up" aria-hidden="true"></i> <span>48%</span>
+</div>
+<header class="entry-header">
+<span>Girl Next / Следващото момиче (2021)</span>
+</header>
+</a>
+</article>
+<article id="post-41533" class="thumb-block full-width post-41533 post type-post status-publish format-video hentry category-ujasi tag-filmi-2021 tag-gaia tag-gaya post_format-post-format-video">
+<a href="https://www.filmi2k.com/gaia-gaya-2021/" title="Gaia / Гая (2021)">
+<div class="post-thumbnail ">
+<img data-src="/wp-content/uploads/2021/11/Gaia.2021.jpg" alt="Gaia / Гая (2021)" src="https://www.filmi2k.com/wp-content/themes/retrotube/assets/img/px.gif">
+<span class="hd-video">HD</span> </div>
+<div class="rating-bar ">
+<div class="rating-bar-meter" style="width: 74%;"></div>
+<i class="fa fa-thumbs-up" aria-hidden="true"></i> <span>74%</span>
+</div>
+<header class="entry-header">
+<span>Gaia / Гая (2021)</span>
+</header>
+</a>
+</article>
+<article id="post-41403" class="thumb-block full-width post-41403 post type-post status-publish format-video hentry category-ujasi tag-filmi-2020 tag-the-wolf-of-snow-hollow tag-valkat-ot-snou-holou post_format-post-format-video">
+<a href="https://www.filmi2k.com/the-wolf-of-snow-hollow-valkat-ot-snou-holou-2020/" title="The Wolf of Snow Hollow / Вълкът от Сноу Холоу (2020)">
+<div class="post-thumbnail ">
+<img data-src="/wp-content/uploads/2021/11/The-Wolf-of-Snow-Hollow.jpg" alt="The Wolf of Snow Hollow / Вълкът от Сноу Холоу (2020)" src="https://www.filmi2k.com/wp-content/themes/retrotube/assets/img/px.gif">
+<span class="hd-video">HD</span> </div>
+<div class="rating-bar ">
+<div class="rating-bar-meter" style="width: 54%;"></div>
+<i class="fa fa-thumbs-up" aria-hidden="true"></i> <span>54%</span>
+</div>
+<header class="entry-header">
+<span>The Wolf of Snow Hollow / Вълкът от Сноу Холоу (2020)</span>
+</header>
+</a>
+</article>
+<article id="post-41396" class="thumb-block full-width post-41396 post type-post status-publish format-video hentry category-ujasi tag-filmi-2021 tag-malignant tag-zlokoben post_format-post-format-video">
+<a href="https://www.filmi2k.com/malignant-zlokoben-2021/" title="Malignant / Злокобен (2021)">
+<div class="post-thumbnail ">
+<img data-src="/wp-content/uploads/2021/10/malignant-2021.jpg" alt="Malignant / Злокобен (2021)" src="https://www.filmi2k.com/wp-content/themes/retrotube/assets/img/px.gif">
+<span class="hd-video">HD</span> </div>
+<div class="rating-bar ">
+<div class="rating-bar-meter" style="width: 60%;"></div>
+<i class="fa fa-thumbs-up" aria-hidden="true"></i> <span>60%</span>
+</div>
+<header class="entry-header">
+<span>Malignant / Злокобен (2021)</span>
+</header>
+</a>
+</article>
+<article id="post-41390" class="thumb-block full-width post-41390 post type-post status-publish format-video hentry category-ujasi tag-rebeka-hol tag-filmi-2020 tag-the-night-house tag-kashta-v-mraka tag-sara-goldbarg post_format-post-format-video">
+<a href="https://www.filmi2k.com/the-night-house-kashta-v-mraka-2020/" title="The Night House / Къща в мрака (2020)">
+<div class="post-thumbnail ">
+<img data-src="/wp-content/uploads/2021/10/The-Night-House.jpg" alt="The Night House / Къща в мрака (2020)" src="https://www.filmi2k.com/wp-content/themes/retrotube/assets/img/px.gif">
+<span class="hd-video">HD</span> </div>
+<div class="rating-bar ">
+<div class="rating-bar-meter" style="width: 72%;"></div>
+<i class="fa fa-thumbs-up" aria-hidden="true"></i> <span>72%</span>
+</div>
+<header class="entry-header">
+<span>The Night House / Къща в мрака (2020)</span>
+</header>
+</a>
+</article>
+<article id="post-41345" class="thumb-block full-width post-41345 post type-post status-publish format-video hentry category-ujasi tag-filmi-2021 tag-candyman tag-kendimen post_format-post-format-video">
+<a href="https://www.filmi2k.com/candyman-kendimen-2021/" title="Candyman / Кендимен (2021)">
+<div class="post-thumbnail ">
+<img data-src="/wp-content/uploads/2021/09/Candyman-2021.jpg" alt="Candyman / Кендимен (2021)" src="https://www.filmi2k.com/wp-content/themes/retrotube/assets/img/px.gif">
+<span class="hd-video">HD</span> </div>
+<div class="rating-bar ">
+<div class="rating-bar-meter" style="width: 78%;"></div>
+<i class="fa fa-thumbs-up" aria-hidden="true"></i> <span>78%</span>
+</div>
+<header class="entry-header">
+<span>Candyman / Кендимен (2021)</span>
+</header>
+</a>
+</article>
+<article id="post-40967" class="thumb-block full-width post-40967 post type-post status-publish format-video hentry category-ujasi tag-filmi-2020 tag-behind-you tag-zad-teb post_format-post-format-video">
+<a href="https://www.filmi2k.com/behind-you-zad-teb-2020/" title="Behind You / Зад теб (2020)">
+<div class="post-thumbnail ">
+<img data-src="/wp-content/uploads/2021/09/Behind-You.jpg" alt="Behind You / Зад теб (2020)" src="https://www.filmi2k.com/wp-content/themes/retrotube/assets/img/px.gif">
+<span class="hd-video">HD</span> </div>
+<div class="rating-bar ">
+<div class="rating-bar-meter" style="width: 84%;"></div>
+<i class="fa fa-thumbs-up" aria-hidden="true"></i> <span>84%</span>
+</div>
+<header class="entry-header">
+<span>Behind You / Зад теб (2020)</span>
+</header>
+</a>
+</article>
+<article id="post-40831" class="thumb-block full-width post-40831 post type-post status-publish format-video hentry category-ujasi tag-dzhosh-lukas tag-uil-patan tag-filmi-2021 tag-the-forever-purge tag-vechna-chistka post_format-post-format-video">
+<a href="https://www.filmi2k.com/the-forever-purge-vechna-chistka-2021/" title="The Forever Purge / Вечна чистка (2021)">
+<div class="post-thumbnail ">
+<img data-src="/wp-content/uploads/2021/07/The-Forever-Purge-2021-.jpg" alt="The Forever Purge / Вечна чистка (2021)" src="https://www.filmi2k.com/wp-content/themes/retrotube/assets/img/px.gif">
+<span class="hd-video">HD</span> </div>
+<div class="rating-bar ">
+<div class="rating-bar-meter" style="width: 89%;"></div>
+<i class="fa fa-thumbs-up" aria-hidden="true"></i> <span>89%</span>
+</div>
+<header class="entry-header">
+<span>The Forever Purge / Вечна чистка (2021)</span>
+</header>
+</a>
+</article>
+<article id="post-40820" class="thumb-block full-width post-40820 post type-post status-publish format-video hentry category-ujasi tag-kris-rok tag-samyuel-dzhaksan tag-filmi-2021 tag-spiral-from-the-book-of-saw tag-spiralata-ubiystven-pazel-prodalzhava post_format-post-format-video">
+<a href="https://www.filmi2k.com/spiral-from-the-book-of-saw-spiralata-ubiystven-pazel-prodalzhava-2021/" title="Spiral: From the Book of Saw / Спиралата: Убийствен пъзел продължава (2021)">
+<div class="post-thumbnail ">
+<img data-src="/wp-content/uploads/2021/07/Spiral-2021.jpg" alt="Spiral: From the Book of Saw / Спиралата: Убийствен пъзел продължава (2021)" src="https://www.filmi2k.com/wp-content/themes/retrotube/assets/img/px.gif">
+<span class="hd-video">HD</span> </div>
+<div class="rating-bar ">
+<div class="rating-bar-meter" style="width: 87%;"></div>
+<i class="fa fa-thumbs-up" aria-hidden="true"></i> <span>87%</span>
+</div>
+<header class="entry-header">
+<span>Spiral: From the Book of Saw / Спиралата: Убийствен пъзел продължава (2021)</span>
+</header>
+</a>
+</article>
+<article id="post-40774" class="thumb-block full-width post-40774 post type-post status-publish format-video hentry category-ujasi tag-dzhefri-diyn-morgan tag-filmi-2021 tag-the-unholy tag-lechitel post_format-post-format-video">
+<a href="https://www.filmi2k.com/the-unholy-lechitel-2021/" title="The Unholy / Лечител (2021)">
+<div class="post-thumbnail ">
+<img data-src="/wp-content/uploads/2021/05/The-Unholy-2021.jpg" alt="The Unholy / Лечител (2021)" src="https://www.filmi2k.com/wp-content/themes/retrotube/assets/img/px.gif">
+<span class="hd-video">HD</span> </div>
+<div class="rating-bar ">
+<div class="rating-bar-meter" style="width: 86%;"></div>
+<i class="fa fa-thumbs-up" aria-hidden="true"></i> <span>86%</span>
+</div>
+<header class="entry-header">
+<span>The Unholy / Лечител (2021)</span>
+</header>
+</a>
+</article>
+<article id="post-40750" class="thumb-block full-width post-40750 post type-post status-publish format-video hentry category-ujasi tag-filmi-2020 tag-the-100-candles-game tag-igrata-na-100-te-sveshti post_format-post-format-video">
+<a href="https://www.filmi2k.com/the-100-candles-game-igrata-na-100-te-sveshti-2020/" title="The 100 Candles Game / Играта на 100-те свещи (2020)">
+<div class="post-thumbnail ">
+<img data-src="/wp-content/uploads/2021/05/The-100-Candles-Game-2020.jpg" alt="The 100 Candles Game / Играта на 100-те свещи (2020)" src="https://www.filmi2k.com/wp-content/themes/retrotube/assets/img/px.gif">
+<span class="hd-video">HD</span> </div>
+<div class="rating-bar ">
+<div class="rating-bar-meter" style="width: 72%;"></div>
+<i class="fa fa-thumbs-up" aria-hidden="true"></i> <span>72%</span>
+</div>
+<header class="entry-header">
+<span>The 100 Candles Game / Играта на 100-те свещи (2020)</span>
+</header>
+</a>
+</article>
+<article id="post-40747" class="thumb-block full-width post-40747 post type-post status-publish format-video hentry category-ujasi tag-deyv-batista tag-filmi-2021 tag-army-of-the-dead tag-armia-na-martvite post_format-post-format-video">
+<a href="https://www.filmi2k.com/army-of-the-dead-armia-na-martvite-2021/" title="Army of the Dead / Армия на мъртвите (2021)">
+<div class="post-thumbnail ">
+<img data-src="/wp-content/uploads/2021/05/Army-of-the-Dead.jpg" alt="Army of the Dead / Армия на мъртвите (2021)" src="https://www.filmi2k.com/wp-content/themes/retrotube/assets/img/px.gif">
+<span class="hd-video">HD</span> </div>
+<div class="rating-bar ">
+<div class="rating-bar-meter" style="width: 90%;"></div>
+<i class="fa fa-thumbs-up" aria-hidden="true"></i> <span>90%</span>
+</div>
+<header class="entry-header">
+<span>Army of the Dead / Армия на мъртвите (2021)</span>
+</header>
+</a>
+</article>
+<article id="post-40741" class="thumb-block full-width post-40741 post type-post status-publish format-video hentry category-ujasi tag-filmi-2021 tag-great-white tag-byalata-akula post_format-post-format-video">
+<a href="https://www.filmi2k.com/great-white-byalata-akula-2021/" title="Great White / Бялата Акула (2021)">
+<div class="post-thumbnail ">
+<img data-src="/wp-content/uploads/2021/05/Great-White-2021.jpg" alt="Great White / Бялата Акула (2021)" src="https://www.filmi2k.com/wp-content/themes/retrotube/assets/img/px.gif">
+<span class="hd-video">HD</span> </div>
+<div class="rating-bar ">
+<div class="rating-bar-meter" style="width: 83%;"></div>
+<i class="fa fa-thumbs-up" aria-hidden="true"></i> <span>83%</span>
+</div>
+<header class="entry-header">
+<span>Great White / Бялата Акула (2021)</span>
+</header>
+</a>
+</article>
+<article id="post-40706" class="thumb-block full-width post-40706 post type-post status-publish format-video hentry category-ujasi tag-filmi-2019 tag-blood-quantum tag-kraven-kvant post_format-post-format-video">
+<a href="https://www.filmi2k.com/blood-quantum-kraven-kvant-2019/" title="Blood Quantum / Кръвен квант (2019)">
+<div class="post-thumbnail ">
+<img data-src="/wp-content/uploads/2021/04/Blood-Quantum-2019.jpg" alt="Blood Quantum / Кръвен квант (2019)" src="https://www.filmi2k.com/wp-content/themes/retrotube/assets/img/px.gif">
+<span class="hd-video">HD</span> </div>
+<div class="rating-bar ">
+<div class="rating-bar-meter" style="width: 72%;"></div>
+<i class="fa fa-thumbs-up" aria-hidden="true"></i> <span>72%</span>
+</div>
+<header class="entry-header">
+<span>Blood Quantum / Кръвен квант (2019)</span>
+</header>
+</a>
+</article>
+</div>
+<div class="pagination"><ul><li><a class="current">1</a></li><li><a href="https://www.filmi2k.com/category/ujasi/page/2/" class="inactive">2</a></li><li><a href="https://www.filmi2k.com/category/ujasi/page/3/" class="inactive">3</a></li><li><a href="https://www.filmi2k.com/category/ujasi/page/4/" class="inactive">4</a></li><li><a href="https://www.filmi2k.com/category/ujasi/page/5/" class="inactive">5</a></li><li><a href="https://www.filmi2k.com/category/ujasi/page/2/">Следваща</a></li><li><a href='https://www.filmi2k.com/category/ujasi/page/26/'>Последна</a></li></ul></div> </main>
+</div>
+</div>
+<footer id="colophon" class="site-footer " role="contentinfo">
+<div class="row">
+<div class="happy-footer">
+<script data-cfasync="false" src="//d3f1wcxz2rdrik.cloudfront.net/?xcwfd=732919"></script> </div>
+<div class="three-columns-footer">
+<section id="text-3" class="widget widget_text"><h2 class="widget-title">Връзки</h2> <div class="textwidget"><p><a href="https://www.filmi2k.com/tag/ruski-filmi/">Руски филми</a><br />
+<a href="https://www.filmi2k.com/actors/">Актьори</a><br />
+<a href="https://www.filmi2k.com/svarzhete-se-s-nas/">Свържете се с нас (Contact Us)</a><br />
+<a href="https://www.youtube.com/">YouTube</a><br />
+<a href="http://vbox7.com/">Vbox7</a></p>
+</div>
+</section><section id="text-2" class="widget widget_text"><h2 class="widget-title">Филми онлайн</h2> <div class="textwidget"><p>Гледайте филми онлайн на сайта Filmi2k.com без никакви условия и напълно безплатно.Тук може да гледате освен най-новите онлайн филми също и всички най-интересни филми излизали до сега събрани в голяма колекция filmi online разделени в различни категории.Нито един от филмите не се съдържа на сървъра на сайта Filmi2k.com! Всички онлайн филми са вградени от други сайтове, сайта не съдържа никакви аудио или видео файлове<br />
+Filmi2k.com не съхранява физически видео файлове.</p>
+<p>Ако сте носител на авторско право и желаете премахването на филми от сайта свържете се с нас чрез <a href="https://www.filmi2k.com/svarzhete-se-s-nas/">формата за контакт</a>.</p>
+</div>
+</section><section id="tag_cloud-7" class="widget widget_tag_cloud"><h2 class="widget-title">Тагове</h2><div class="tagcloud"><a href="https://www.filmi2k.com/tag/200-m-p-h/" class="tag-cloud-link tag-link-25 tag-link-position-1" style="font-size: 8pt;" aria-label="200 M.P.H. (1 обект)">200 M.P.H.</a>
+<a href="https://www.filmi2k.com/tag/200-mili-v-chas/" class="tag-cloud-link tag-link-26 tag-link-position-2" style="font-size: 8pt;" aria-label="200 мили в час (1 обект)">200 мили в час</a>
+<a href="https://www.filmi2k.com/tag/battle-of-the-pacific/" class="tag-cloud-link tag-link-68 tag-link-position-3" style="font-size: 8pt;" aria-label="Battle of the Pacific (1 обект)">Battle of the Pacific</a>
+<a href="https://www.filmi2k.com/tag/bg-audio/" class="tag-cloud-link tag-link-72 tag-link-position-4" style="font-size: 22pt;" aria-label="BG Audio (1&nbsp;048 обекти)">BG Audio</a>
+<a href="https://www.filmi2k.com/tag/big-stan/" class="tag-cloud-link tag-link-74 tag-link-position-5" style="font-size: 8pt;" aria-label="Big Stan (1 обект)">Big Stan</a>
+<a href="https://www.filmi2k.com/tag/black-gold/" class="tag-cloud-link tag-link-75 tag-link-position-6" style="font-size: 8pt;" aria-label="Black Gold (1 обект)">Black Gold</a>
+<a href="https://www.filmi2k.com/tag/changing-lanes/" class="tag-cloud-link tag-link-91 tag-link-position-7" style="font-size: 8pt;" aria-label="Changing Lanes (1 обект)">Changing Lanes</a>
+<a href="https://www.filmi2k.com/tag/dawn-rider/" class="tag-cloud-link tag-link-113 tag-link-position-8" style="font-size: 8pt;" aria-label="Dawn Rider (1 обект)">Dawn Rider</a>
+<a href="https://www.filmi2k.com/tag/el-orfanato/" class="tag-cloud-link tag-link-132 tag-link-position-9" style="font-size: 8pt;" aria-label="El Orfanato (1 обект)">El Orfanato</a>
+<a href="https://www.filmi2k.com/tag/exorcist-the-beginning/" class="tag-cloud-link tag-link-137 tag-link-position-10" style="font-size: 8pt;" aria-label="Exorcist: The Beginning (1 обект)">Exorcist: The Beginning</a>
+<a href="https://www.filmi2k.com/tag/extracted/" class="tag-cloud-link tag-link-138 tag-link-position-11" style="font-size: 8pt;" aria-label="Extracted (1 обект)">Extracted</a>
+<a href="https://www.filmi2k.com/tag/four-brothers/" class="tag-cloud-link tag-link-148 tag-link-position-12" style="font-size: 8pt;" aria-label="Four Brothers (1 обект)">Four Brothers</a>
+<a href="https://www.filmi2k.com/tag/metro/" class="tag-cloud-link tag-link-239 tag-link-position-13" style="font-size: 8.9264705882353pt;" aria-label="Metro (2 обекти)">Metro</a>
+<a href="https://www.filmi2k.com/tag/puss-in-boots/" class="tag-cloud-link tag-link-278 tag-link-position-14" style="font-size: 8pt;" aria-label="Puss in Boots (1 обект)">Puss in Boots</a>
+<a href="https://www.filmi2k.com/tag/ratatouille/" class="tag-cloud-link tag-link-280 tag-link-position-15" style="font-size: 8pt;" aria-label="Ratatouille (1 обект)">Ratatouille</a>
+<a href="https://www.filmi2k.com/tag/red-dawn/" class="tag-cloud-link tag-link-281 tag-link-position-16" style="font-size: 8pt;" aria-label="Red Dawn (1 обект)">Red Dawn</a>
+<a href="https://www.filmi2k.com/tag/red-eye/" class="tag-cloud-link tag-link-282 tag-link-position-17" style="font-size: 8pt;" aria-label="Red Eye (1 обект)">Red Eye</a>
+<a href="https://www.filmi2k.com/tag/red-werewolf-hunter/" class="tag-cloud-link tag-link-283 tag-link-position-18" style="font-size: 8pt;" aria-label="Red Werewolf Hunter (1 обект)">Red Werewolf Hunter</a>
+<a href="https://www.filmi2k.com/tag/revolutionary-road/" class="tag-cloud-link tag-link-284 tag-link-position-19" style="font-size: 8pt;" aria-label="Revolutionary Road (1 обект)">Revolutionary Road</a>
+<a href="https://www.filmi2k.com/tag/riddle/" class="tag-cloud-link tag-link-285 tag-link-position-20" style="font-size: 8pt;" aria-label="Riddle (1 обект)">Riddle</a>
+<a href="https://www.filmi2k.com/tag/rio/" class="tag-cloud-link tag-link-286 tag-link-position-21" style="font-size: 8pt;" aria-label="Rio (1 обект)">Rio</a>
+<a href="https://www.filmi2k.com/tag/rise-of-the-guardians/" class="tag-cloud-link tag-link-287 tag-link-position-22" style="font-size: 8pt;" aria-label="Rise of the Guardians (1 обект)">Rise of the Guardians</a>
+<a href="https://www.filmi2k.com/tag/robot-and-frank/" class="tag-cloud-link tag-link-289 tag-link-position-23" style="font-size: 8pt;" aria-label="Robot and Frank (1 обект)">Robot and Frank</a>
+<a href="https://www.filmi2k.com/tag/rocky-balboa/" class="tag-cloud-link tag-link-291 tag-link-position-24" style="font-size: 8pt;" aria-label="Rocky Balboa (1 обект)">Rocky Balboa</a>
+<a href="https://www.filmi2k.com/tag/safe/" class="tag-cloud-link tag-link-292 tag-link-position-25" style="font-size: 8pt;" aria-label="Safe (1 обект)">Safe</a>
+<a href="https://www.filmi2k.com/tag/salvador/" class="tag-cloud-link tag-link-294 tag-link-position-26" style="font-size: 8pt;" aria-label="Salvador (1 обект)">Salvador</a>
+<a href="https://www.filmi2k.com/tag/scarecrow/" class="tag-cloud-link tag-link-295 tag-link-position-27" style="font-size: 8pt;" aria-label="Scarecrow (1 обект)">Scarecrow</a>
+<a href="https://www.filmi2k.com/tag/scent-of-a-woman/" class="tag-cloud-link tag-link-297 tag-link-position-28" style="font-size: 8pt;" aria-label="Scent of a Woman (1 обект)">Scent of a Woman</a>
+<a href="https://www.filmi2k.com/tag/seven-psychopaths/" class="tag-cloud-link tag-link-298 tag-link-position-29" style="font-size: 8pt;" aria-label="Seven Psychopaths (1 обект)">Seven Psychopaths</a>
+<a href="https://www.filmi2k.com/tag/shadow-of-fear/" class="tag-cloud-link tag-link-300 tag-link-position-30" style="font-size: 8pt;" aria-label="Shadow of Fear (1 обект)">Shadow of Fear</a>
+<a href="https://www.filmi2k.com/tag/shes-out-of-my-league/" class="tag-cloud-link tag-link-302 tag-link-position-31" style="font-size: 8.9264705882353pt;" aria-label="She&#039;s Out of My League (2 обекти)">She&#039;s Out of My League</a>
+<a href="https://www.filmi2k.com/tag/sherlock-holmes-a-game-of-shadows/" class="tag-cloud-link tag-link-303 tag-link-position-32" style="font-size: 8pt;" aria-label="Sherlock Holmes: A Game of Shadows (1 обект)">Sherlock Holmes: A Game of Shadows</a>
+<a href="https://www.filmi2k.com/tag/shrek-forever-after/" class="tag-cloud-link tag-link-304 tag-link-position-33" style="font-size: 8pt;" aria-label="Shrek Forever After (1 обект)">Shrek Forever After</a>
+<a href="https://www.filmi2k.com/tag/side-effects/" class="tag-cloud-link tag-link-305 tag-link-position-34" style="font-size: 8pt;" aria-label="Side Effects (1 обект)">Side Effects</a>
+<a href="https://www.filmi2k.com/tag/sightseers/" class="tag-cloud-link tag-link-306 tag-link-position-35" style="font-size: 8pt;" aria-label="Sightseers (1 обект)">Sightseers</a>
+<a href="https://www.filmi2k.com/tag/signs/" class="tag-cloud-link tag-link-307 tag-link-position-36" style="font-size: 8pt;" aria-label="Signs (1 обект)">Signs</a>
+<a href="https://www.filmi2k.com/tag/silent-hill-revelation/" class="tag-cloud-link tag-link-308 tag-link-position-37" style="font-size: 8pt;" aria-label="Silent Hill Revelation (1 обект)">Silent Hill Revelation</a>
+<a href="https://www.filmi2k.com/tag/sinister/" class="tag-cloud-link tag-link-311 tag-link-position-38" style="font-size: 8pt;" aria-label="Sinister (1 обект)">Sinister</a>
+<a href="https://www.filmi2k.com/tag/smokin-aces/" class="tag-cloud-link tag-link-313 tag-link-position-39" style="font-size: 8pt;" aria-label="Smokin` Aces (1 обект)">Smokin` Aces</a>
+<a href="https://www.filmi2k.com/tag/snow-white-and-the-huntsman/" class="tag-cloud-link tag-link-314 tag-link-position-40" style="font-size: 8pt;" aria-label="Snow White and the Huntsman (1 обект)">Snow White and the Huntsman</a>
+<a href="https://www.filmi2k.com/tag/spy-game/" class="tag-cloud-link tag-link-316 tag-link-position-41" style="font-size: 8pt;" aria-label="Spy Game (1 обект)">Spy Game</a>
+<a href="https://www.filmi2k.com/tag/state-of-play/" class="tag-cloud-link tag-link-318 tag-link-position-42" style="font-size: 8pt;" aria-label="State of Play (1 обект)">State of Play</a>
+<a href="https://www.filmi2k.com/tag/stitches/" class="tag-cloud-link tag-link-319 tag-link-position-43" style="font-size: 8pt;" aria-label="Stitches (1 обект)">Stitches</a>
+<a href="https://www.filmi2k.com/tag/streetdance-2/" class="tag-cloud-link tag-link-320 tag-link-position-44" style="font-size: 8pt;" aria-label="StreetDance 2 (1 обект)">StreetDance 2</a>
+<a href="https://www.filmi2k.com/tag/struck-by-lightning/" class="tag-cloud-link tag-link-321 tag-link-position-45" style="font-size: 8pt;" aria-label="Struck by Lightning (1 обект)">Struck by Lightning</a></div>
+</section> </div>
+<div class="clear"></div>
+</div>
+</footer>
+</div>
+<a class="button" href="#" id="back-to-top" title="Back to top"><i class="fa fa-chevron-up"></i></a>
+<div class="modal fade wpst-user-modal" id="wpst-user-modal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog" data-active-tab="">
+<div class="modal-content">
+<div class="modal-body">
+<a href="#" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-remove"></i></a>
+<div class="wpst-register">
+<div class="alert alert-danger">Registration is disabled.</div>
+</div>
+<div class="wpst-login">
+<h3>Login to FILMI2K.COM</h3>
+<form id="wpst_login_form" action="https://www.filmi2k.com/" method="post">
+<div class="form-field">
+<label>Username</label>
+<input class="form-control input-lg required" name="wpst_user_login" type="text" />
+</div>
+<div class="form-field">
+<label for="wpst_user_pass">Password</label>
+<input class="form-control input-lg required" name="wpst_user_pass" id="wpst_user_pass" type="password" />
+</div>
+<div class="form-field lost-password">
+<input type="hidden" name="action" value="wpst_login_member" />
+<button class="btn btn-theme btn-lg" data-loading-text="Loading..." type="submit">Login</button> <a class="alignright" href="#wpst-reset-password">Lost Password?</a>
+</div>
+<input type="hidden" id="login-security" name="login-security" value="2bc73372a4" /><input type="hidden" name="_wp_http_referer" value="/category/ujasi/" /> </form>
+<div class="wpst-errors"></div>
+</div>
+<div class="wpst-reset-password">
+<h3>Reset Password</h3>
+<p>Enter the username or e-mail you used in your profile. A password reset link will be sent to you by email.</p>
+<form id="wpst_reset_password_form" action="https://www.filmi2k.com/" method="post">
+<div class="form-field">
+<label for="wpst_user_or_email">Username or E-mail</label>
+<input class="form-control input-lg required" name="wpst_user_or_email" id="wpst_user_or_email" type="text" />
+</div>
+<div class="form-field">
+<input type="hidden" name="action" value="wpst_reset_password" />
+<button class="btn btn-theme btn-lg" data-loading-text="Loading..." type="submit">Get new password</button>
+</div>
+<input type="hidden" id="password-security" name="password-security" value="2bc73372a4" /><input type="hidden" name="_wp_http_referer" value="/category/ujasi/" /> </form>
+<div class="wpst-errors"></div>
+</div>
+<div class="wpst-loading">
+<p><i class="fa fa-refresh fa-spin"></i><br>Loading...</p>
+</div>
+</div>
+<div class="modal-footer">
+<span class="wpst-register-footer">Don&#039;t have an account? <a href="#wpst-register">Sign up</a></span>
+<span class="wpst-login-footer">Already have an account? <a href="#wpst-login">Login</a></span>
+</div>
+</div>
+</div>
+</div>
+<script type='text/javascript' src='https://www.filmi2k.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://www.filmi2k.com/wp-includes/js/dist/vendor/wp-polyfill.min.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/www.filmi2k.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.filmi2k.com/wp-content/plugins/contact-form-7/includes/js/index.js' id='contact-form-7-js'></script>
+<script type='text/javascript' src='https://www.filmi2k.com/wp-content/themes/retrotube/assets/js/navigation.js' id='wpst-navigation-js'></script>
+<script type='text/javascript' src='https://www.filmi2k.com/wp-content/themes/retrotube/assets/js/jquery.bxslider.js' id='wpst-carousel-js'></script>
+<script type='text/javascript' src='https://www.filmi2k.com/wp-content/themes/retrotube/assets/js/jquery.touchSwipe.min.js' id='wpst-touchswipe-js'></script>
+<script type='text/javascript' id='wpst-main-js-extra'>
+/* <![CDATA[ */
+var wpst_ajax_var = {"url":"https:\/\/www.filmi2k.com\/wp-admin\/admin-ajax.php","nonce":"abbd477dff","ctpl_installed":""};
+var objectL10nMain = {"readmore":"Read more","close":"Close"};
+var options = {"thumbnails_ratio":"16\/9"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.filmi2k.com/wp-content/themes/retrotube/assets/js/main.js' id='wpst-main-js'></script>
+<script type='text/javascript' src='https://www.filmi2k.com/wp-content/themes/retrotube/assets/js/skip-link-focus-fix.js' id='wpst-skip-link-focus-fix-js'></script>
+<script>window.lazyLoadOptions={elements_selector:"iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.filmi2k.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script>
+</body>
+</html>

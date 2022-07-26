@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+    <form method="POST" enctype="multipart/form-data" action="{% url 'delete post' post_pk %}">
+        <h1> ARE YOU SURE YOU WANT TO DELETE THIS POST</h1>
+        {% csrf_token %}
+        <button>Submit </button>
+    </form>
+
+{% endblock %}

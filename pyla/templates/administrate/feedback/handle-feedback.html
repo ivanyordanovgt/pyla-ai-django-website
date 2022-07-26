@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+{% block content %}
+{% load filters %}
+
+    <div class="activity-box">
+    {% for feedback in object_list %}
+
+        <div class="features">
+            <a href="{% url 'view feedback message' feedback.pk %}"> {{ feedback.title }}</a>
+            <p> {{ feedback.description|truncatechars:30 }}</p>
+        </div>
+
+    {% endfor %}
+</div>
+
+    <div class="activity-box"
+
+         style="margin-top: 0;
+         border-top: none;">
+
+    <span class="step-links">
+        <div class="features" style="">
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+            {% endif %}
+        </div>
+    </span>
+</div>
+{% endblock %}

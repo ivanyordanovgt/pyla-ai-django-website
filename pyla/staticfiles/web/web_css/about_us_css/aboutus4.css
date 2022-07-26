@@ -1,0 +1,24 @@
+
+.about-pyla-box p {
+    color: indianred;
+    font-size: 4vw;
+    text-align: center;
+
+}
+
+.about-pyla-box img {
+    height: 23vh;
+    width: 23vw;
+    margin-left: 38vw;
+    margin-top: 14vh;
+    opacity: 0.5;
+}
+
+.about-pyla-box {
+    height: 30vh;
+    margin-top: 33vh;
+}
+
+.about-pyla-box iframe {
+    margin-left: 33vw;
+}

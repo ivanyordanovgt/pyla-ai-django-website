@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container">
+        <div class="edit-profile-box">
+            <div class="edit-profile-box-moto">
+                <h1>{{ object.title }}</h1>
+                <textarea readonly style="text-align: center">{{ object.description }}</textarea>
+                {% if object.image %}
+                    <a href="{{ object.image.url }}" style="background-color: transparent"> View image. <span>({{ object.image }}) </span></a><br>
+                {% endif %}
+                {% if object.video %}
+                    <br>
+                    <a href="{{ object.video }}" style="background-color:transparent; font-size: 1.4vw">{{ object.video }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="replies-box">
+        <a href="{% url 'view feedback replies' object.pk %}" style="text-decoration: none; ">
+            <h1>View replies <span>({{ replies_count }})</span> </h1>
+        </a>
+        {% if request.user.profile.staff_group.response_to_feedback %}
+        <div>
+            <a href="{% url 'close feedback' object.pk %}" style="color: indianred"> Mark solved </a>
+        </div>
+    {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,61 @@
+
+.comment-box {
+    background-color: transparent;
+
+}
+
+.comment {
+    border: 3px solid red;
+    border-bottom: 1px solid red;
+}
+
+.comment p {
+    color: navajowhite;
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+    margin-left: 5vw;
+    margin-top: 3vh;
+}
+
+.comment img {
+    float: left;
+    margin-top: 1vh;
+    margin-left: 1vw;
+}
+
+.ScrollDiv {
+    height: 1vh;
+    margin: 0;
+}
+
+.DivWithScroll {
+    height: 71vh;
+    margin: 0;
+}
+
+.comment p a {
+    text-decoration: none;
+    color: darkcyan;
+}
+
+.comment h1 {
+    color: lightsteelblue;
+    font-size: 1.4vw;
+    margin-left: 1.4vw;
+    margin-top: 3vh;
+}
+
+.edit-post-box {
+    margin-left: 2vw;
+    word-spacing: 1.5vw;
+}
+.edit-post-box a {
+    text-decoration: none;
+    color: darkred;
+    font-size: 1.6vw;
+}
+
+::placeholder {
+    color: red;
+
+}
+

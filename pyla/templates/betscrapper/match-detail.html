@@ -1,0 +1,64 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <style>
+        .match-info {
+            text-align: center;
+            margin-top: 10vh;
+        }
+
+        .match-info h1 {
+            color: indianred;
+            font-family: "Trebuchet MS";
+            font-size: 3vw;
+        }
+
+        .match-info span {
+            color: #2ab7a9;
+            font-size: 2.6vw;
+            font-family: "MV Boli", serif;
+        }
+
+        .archive-match {
+            margin-top: 10vh;
+        }
+        .archive-match a {
+            text-decoration: None;
+            color: #0d93ff;
+            font-family: "MV Boli", serif;
+            font-size: 4vw;
+            padding: 1vw;
+            background: rgba(30, 30, 30,.3);
+        }
+
+        .archive-match p {
+            color: rgba(100, 100, 200, 0.7);
+        }
+
+        .archive-match a:hover {
+            background: rgba(60, 60, 60,.7);
+        }
+    </style>
+<div class="match-info">
+    <h1><span>Match:</span></h1>
+
+    <h1>{{ object.match_one }} vs {{ object.match_two }}</h1>
+
+    <h1><span>Bookmaker:</span></h1>
+    <h1>{{ object.bookmaker }}</h1>
+    <h1>
+        <span>Sport:</span><br></h1>
+    <h1>
+        {{ object.sport }} League: {{ object.liga }}
+    </h1>
+    <h1><span>Date:</span></h1>
+    <h1>{{ object.date }} {{ object.time }}</h1>
+    <h1><span>Bet:</span></h1>
+    <h1>{{ object.bet_type }} Odds: {{ object.odds }}</h1>
+
+    <div class="archive-match">
+    <a href="#"> ARCHIVE </a>
+        <p> keep in mind that archives matches are saved in your session, not our database. This means that after some time the
+        session will expire and the matches will be deleted.</p>
+    </div>
+</div>
+{% endblock %}

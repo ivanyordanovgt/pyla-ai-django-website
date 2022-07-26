@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+
+    .nav-bar a {
+        font-size: 4vw;
+        color: indianred;
+    }
+
+    hr {
+
+    }
+
+</style>
+<body>
+<div class="nav-bar">
+    <a href="{% url 'list view' %}"> Todos list </a><br>
+    <a href="{% url 'create view' %}"> Create Todo</a><hr>
+</div>
+</body>
+</html>
+{% block content %}
+{% endblock %}

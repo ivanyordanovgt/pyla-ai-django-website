@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<style>
+        span {
+            color: mediumpurple;
+        }
+
+        footer h1 {
+            color: #c5c6c7;
+        }
+
+        .dropdown-content a{
+            margin-left: 1vw;
+        }
+
+
+    </style>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static '/user_activity/user-activity-page1.css' %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/manage_profiles/profile_css/feedback-view.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/manage_profiles/profile_css/edit_profile1.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/user_activity/feedback-replies.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/user_activity/view-feedbacks.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/base/base_css/base3.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/forums/forum3.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/forums/posts1.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/forums/comments1.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/forums/edit-post-comment1.css' %}">
+</head>
+<body>
+<div style="margin-top: 2vh">
+
+    <header style="margin-left: 2.7vw">
+    <div class="header-bar">
+        <div class="logo">
+            <h1> Py<span class="pyla-span">La</span></h1>
+            <p class="p-logo"> One step ahead of the game.</p>
+        </div>
+
+
+        <div class="nav-bar" style="">
+            <a href="{% url 'index' %}"> HOME </a>
+            <a href="{% url 'about pyla' %}"> ABOUT </a>
+            <a href="{% url 'show subscriptions' %}"> SUBSCRIPTIONS </a>
+            <a href="{% url 'show forums page' %}"> FORUMS </a>
+            <a href="{% url 'feedback' %}"> CONTACT </a>
+            {% if request.user.email %}
+            <div class="dropdown">
+                <a href="#">PROFILE</a>
+                <div class="dropdown-content" style="">
+                    <h1> {{ request.user.nickname }}</h1>
+                    <hr>
+                    <div style="text-align: center">
+                    <a href="{% url 'profile view' request.user.pk %}">SETTINGS</a>
+                    <a href="{% url 'activity' %}">ACTIVITY</a>
+                    {% if request.user.profile.staff_group %}
+                        <a href="{% url 'administrate page' %}">ADMINISTRATE</a>
+                    {% endif %}
+                    {% if not user.is_activated %}
+                        <a href="{% url 'email confirmation' %}">CONFIRM EMAIL</a>
+                    {% endif %}
+                    <a href="{% url 'change password' %}">RESET PASSWORD</a>
+                    <a href="{% url 'logout user' %}">LOGOUT</a>
+
+                    </div>
+                </div>
+            {% else %}
+                <div class="dropdown">
+                <a href="#">SIGNUP</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'register user' %}">REGISTER</a>
+                    <a href="{% url 'login user' %}">LOGIN</a>
+            </div>
+            {% endif %}
+</div>
+
+        </div>
+
+    </div>
+    </div>
+    </header>
+</div>
+</body>
+
+{#<footer>#}
+{#    <a href="{% url 'show contact us page' %}"> Contact us#}
+{#             </a>#}
+{#    <h1>#}
+{#        PyLa#}
+{#             </h1>#}
+{#    <a href=""> About us#}
+{#             </a>#}
+{#</footer>#}
+
+
+{% block content %}
+{% endblock %}

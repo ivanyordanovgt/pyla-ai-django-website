@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/user_activity/feedback-replies.css' %}">
+
+    {% if not feedback_status %}
+    <div class="add-reply">
+        <a href="{% url 'reply to feedback' feedback_pk %}"> ADD REPLY </a>
+    </div>
+    {% endif %}
+    <div class="feedback-replies-box">
+        <div class="ScrollDiv">
+            {% for reply in object_list %}
+                <div class="feedback-replies">
+                    <div class="feedback-title">
+                        {% if reply.user.profile.staff_group %}
+                            <h2> PyLa team <span> verified </span></h2>
+                        {% else %}
+                            <h2> User </h2>
+                        {% endif %}
+                        <h1> {{ reply.user.nickname }}</h1>
+                        {% if reply.user.profile.staff_group %}
+                            <p>{{ reply.user.profile.staff_group }}</p>
+                        {% endif %}
+
+                    </div>
+
+                    <h1 style="font-size: 3vw">{{ reply.title }}</h1>
+                    <p> {{ reply.description }} </p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

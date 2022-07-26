@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+    span {
+        color: red;
+        font-size: 30px;
+    }
+
+    .title {
+        font-size: 40px;
+        color: purple;
+    }
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="POST" action="{% url 'create view' %}">
+    <div>
+    {% csrf_token %}
+    {{ form }}
+    <button> Save </button>
+        </div>
+
+</form>
+
+</body>
+</html>

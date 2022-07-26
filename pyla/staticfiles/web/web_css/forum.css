@@ -1,0 +1,18 @@
+
+.logged-in-h2 {
+
+    color: pink;
+    font-size: 6vw;
+    text-align: center;
+}
+
+.not-logged-in p{
+
+    color: indianred;
+    font-size: 3vw;
+    text-align: center;
+    font-family: "MV Boli", serif;
+
+}
+
+

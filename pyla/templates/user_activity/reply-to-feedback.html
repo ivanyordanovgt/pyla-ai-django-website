@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+    <form method="POST" enctype="multipart/form-data" action="{% url 'reply to feedback' feedback_pk.pk %}">
+        {% csrf_token %}
+        <div style="margin-left: 13vw; margin-top: 10vh">
+            <h1 style="text-align: center; color: indianred"> SUBMIT A REPLY </h1>
+            <div class="edit-profile-box">
+                <div class="edit-profile-box-moto">
+                        {{ form }}
+                         <button> POST </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+{% endblock %}

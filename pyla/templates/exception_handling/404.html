@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+    <style>
+        .error-reasons p {
+        color: deeppink;
+    }
+    </style>
+<div class="activity-box">
+      <div class="features" style="text-align: center">
+
+          <h1 style="font-size: 4vw; color: wheat"> RESOURCE NOT FOUND (404)</h1>
+          <h1 style="font-size: 3.4vw; color: wheat">
+              We couldn't find any resources with the given parameters.
+          </h1>
+          <div class="error-reasons" style="">
+              <p style="margin-top: 10vh">
+                  Possible reasons could be:<br><br>
+                  1. The resource you tried to access is deleted/moved<br><br>
+                  2. You entered an invalid url.<br><br>
+                  3. If you suspect the reason is different you can contact us at:<br><br>
+              </p>
+          </div>
+          <a href="{% url 'feedback' %}">FEEDBACK</a>
+
+      </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+
+.not-logged-in {
+
+}
+
+.not-logged-in p {
+    color: indianred;
+    font-size: 3vw;
+    text-align: center;
+    font-family: "MV Boli", serif;
+}
+
+.not-logged-in span {
+
+    color: blueviolet;
+
+}
+
+.logged-in {
+    color: pink;
+    text-align: center;
+    font-size: 7vw;
+        }

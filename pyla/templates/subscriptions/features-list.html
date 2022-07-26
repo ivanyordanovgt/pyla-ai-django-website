@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<style>
+    body {
+        height: 300vh;
+    }
+</style>
+    <div class="activity-box">
+    {% for object in object_list %}
+            <div class="features">
+                <a href="{% url 'edit feature' object.pk %}">{{ object.name }}</a>
+                <p> Configure {{ object.name }}</p>
+            </div>
+    {% endfor %}
+    </div>
+{% endblock %}

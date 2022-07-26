@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load filters %}
+{% block content %}
+    <style>
+        body {
+            height: 140vh;
+            width: 120vw;
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+    </style>
+<head>
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/subscriptions/subscription.css' %}">
+</head>
+<body>
+
+<div class="subscription-details">
+    <div>
+        <h2 class="title"> {{ object.title|upper }}</h2>
+    </div>
+        <h2> DESCRIPTION </h2>
+        <div class="details">
+        <p> {{ object.description|linebreaks }}</p>
+        {% if request.user.is_staff %}
+        {% endif %}
+
+</body>
+
+{% endblock %}

@@ -1,0 +1,187 @@
+    {% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+
+    body {
+        height: 130vh;
+        cursor: crosshair;
+    }
+
+    .postsList {
+        overflow: scroll;
+        max-height: 100vh;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+</style>
+
+
+
+<div class="infoBar">
+    <div class="infoBox">
+
+        <div id="aboutForum">
+            <h1> About forum</h1>
+        </div>
+
+        <p> {{ forumDesc }}</p>
+        <p> Posts: <span>{{ postsCount }}</span></p>
+        <h1 id="createdOn"> Created on {{ forumObj.date }}</h1>
+
+        <div class="createdOn" onclick='location.href="{% url 'create post' forum_pk %}";'>
+            <p> Create a post </p>
+        </div>
+
+        <div class="rules">
+            <div id="aboutForum">
+            <h1> Rules </h1>
+        </div>
+
+        <p>
+            1. Don't be racist
+        </p>
+        <p> 2. Don't be too rude </p>
+        <p> 3. Don't promote any products </p>
+        <p> 4. No death threats </p>
+        <p> 5. No personal info </p>
+        <p> 6. No begging </p>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="forum">
+
+{#    <div class="discussionBtn" onclick='location.href="{% url 'create post' forum_pk %}";'>#}
+{##}
+{#        <img src="{{ request.user.profile.profile_picture.url }}" style="">#}
+{##}
+{#        <input value="Create a post">#}
+{#    </div>#}
+
+
+    <div class="postsList">
+        {% for post in object_list %}
+            <div class="post" style="background-color: lightgray; cursor: crosshair;">
+                <div class="post-title">
+{#                    style="background-color: lightgray; cursor: pointer;"  onclick='location.href="{% url 'show posts comments' post.pk %}";'#}
+{#                    {% if post.user.profile.profile_picture %}#}
+{#                            <img src="{{ post.user.profile.profile_picture.url }}" class="round-image">#}
+{#                        {% else %}#}
+{#                            <img src="https://images.pexels.com/photos/1543793/pexels-photo-1543793.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="round-image">#}
+{#                        {% endif %}#}
+                    <h1 class="posted_by" > Posted by
+                        <a href="{% url 'profile view' post.user.pk %}" style="text-decoration: none;
+                        color: darkred;
+                        "
+                        >
+                            {{ post.user.nickname }}</a>
+                        at {{ post.date }}
+                    </h1>
+                </div>
+                <div class="post-content">
+                    <h1 class="title">{{ post.title }}</h1>
+                    <p class="description" id="desc" style="color: black"> {{ post.description|truncatechars:50 }} <span id="seeMore">Show more </span>
+{#                  {% url 'show posts comments' post.pk %} #}
+                    </p>
+                    <p id="descFullText" style="display: none;"> {{ post.description }}</p>
+
+                </div>
+
+            <a href="{% url 'show posts comments' post.pk %}" style="color: black"><div id="comment">
+                <div id="commentBox">
+                    <div id="content">
+                        <img src="{% static 'forums/images/ikonka.png' %}">
+                        <h2>  {{ post.comment_set.count }} Comments </h2>
+{#                        {% for comment in post.comment_set.all %}#}
+{#                            {{ comment }}#}
+{#                            #}
+{##}
+{#                        {% endfor %}#}
+                    </div>
+
+                    </div>
+                </div>
+            </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+
+    {#const seeMoreLabel = document.getElementById('seeMore')#}
+    const postsDiv = document.getElementsByClassName('postsList')[0];
+    for (const children of postsDiv.children) {
+
+        for (let childrenElement of children.children) {
+            if (childrenElement.className === 'post-content') {
+                const [_, descElement, descElementFullText] = childrenElement.children
+                const seeMoreLabel = descElement.children[0];
+
+                configureSeeMoreLabel(seeMoreLabel,
+                    descElement,
+                    descElementFullText,
+                    'darkred',
+                    '1.1vw',
+                    () => showMore(seeMoreLabel, descElement, descElementFullText.textContent))
+            }
+
+        }
+        {#configureSeeMoreLabel('lightblue', '1.1vw', showMore)#}
+
+    }
+
+    function configureSeeMoreLabel(seeMoreLabel, descElement, descElementFullText, color, size, func) {
+        seeMoreLabel.style.color = color
+        seeMoreLabel.style.fontSize = size
+        seeMoreLabel.addEventListener('click', func)
+    }
+
+    function showMore(seeMoreLabel, descElement, descElementFullText) {
+
+        if (descElement.textContent.replace('Show more', '').replace('Show less', '').replaceAll(' ', '') == descElementFullText.replaceAll(' ', '')) {
+
+            descElement.textContent = descElement.textContent.slice(0, 50);
+
+            seeMoreLabel.textContent = 'Show more'
+            descElement.parentElement.style.paddingBottom = '0.3vw'
+            descElement.appendChild(seeMoreLabel)
+        } else {
+            (descElement.textContent.replace('Show more', '').replace('Show less', '').replaceAll(' ', ''), document.getElementById('descFullText').textContent.replaceAll(' ', ''))
+            descElement.textContent = descElementFullText.replaceAll('Show more', '');
+            seeMoreLabel.textContent = 'Show less'
+            console.log(descElement.parentElement, '!!!')
+            descElement.parentElement.style.paddingBottom = '0.8vw'
+            descElement.appendChild(seeMoreLabel)
+        }
+
+    }
+
+
+</script>
+
+<script>
+    const contentDiv = document.getElementById('content')
+    const createdOnDiv = document.getElementsByClassName('createdOn')[0]
+
+    contentDiv.addEventListener('mouseover', () => {
+        contentDiv.style.backgroundColor = 'rgb(100, 100, 100)'
+    })
+
+
+</script>
+
+<script>
+
+    const createPostBtn = document.get
+</script>
+{% endblock %}

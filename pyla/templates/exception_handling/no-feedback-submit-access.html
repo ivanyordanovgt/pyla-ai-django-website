@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+    <style>
+
+        a:hover {
+            color: indianred;
+        }
+
+    </style>
+
+<div class="activity-box">
+      <div class="features" style="text-align: center">
+
+          <h1 style="font-size: 4vw; color: wheat"> NO ACCESS </h1>
+          <p style="font-size: 3.4vw;"> You can't submit any more feedbacks because you have too many unanswered
+          </p>
+          <p style="margin-top: 10vh">If you believe that's a mistake you
+          can contact us at:
+          </p>
+          <a href="{% url 'feedback' %}">FEEDBACK</a>
+
+      </div>
+</div>
+{% endblock %}

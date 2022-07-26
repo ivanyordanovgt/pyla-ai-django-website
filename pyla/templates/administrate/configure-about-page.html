@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+    <head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{% static '/web/web_css/index_.web_css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/web/web_css/about_us_css/aboutus4.css' %}">
+    </head>
+    <div class="pyla-information-box">
+
+        <h1> Py<span class="title">La</span> </h1>
+        <hr>
+
+        <div>
+         <form method="POST" enctype="multipart/form-data" action="{% url 'configure about pyla' 1 %}">
+            {% csrf_token %}
+            <div class="about-pyla-box">
+                <p> What is PyLa?</p>
+                <p> <span>{{ form.about_pyla_text }}
+                </span>
+                    <br>
+                    <br>
+{#                <span style="color: firebrick;">#}
+{#                    Trophies is the ranking system in Brawl Stars.#}
+{#                    You play games with real people and based on your wins you earn a given amount of trophies.#}
+{#                </span>#}
+                </p>
+            </div>
+
+            <div class="goals-pyla-box">
+                <p> Goals for 2022</p>
+                <p> <span>{{ form.goals_text }}
+                </span>
+                </p>
+                <button> SAVE </button>
+            </div>
+
+         </form>
+        </div>
+    </div>
+
+{% endblock %}

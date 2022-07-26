@@ -1,0 +1,25 @@
+
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        #info h1 {
+            color: indianred;
+            text-align: center;
+        }
+
+        #info {
+            margin-top: 20vh;
+
+        }
+    </style>
+<body>
+<div id="info">
+    <h1> Not enough balance to post/comment. This functionality is added to prevent spamming.</h1>
+    <h1> Price of a post: <span>100</span></h1>
+    <h1> Price of a comment: <span>10</span></h1>
+    <h1> You can get <span>200</span> balance by clicking <span>here</span></h1>
+
+</div>
+</body>
+{% endblock %}

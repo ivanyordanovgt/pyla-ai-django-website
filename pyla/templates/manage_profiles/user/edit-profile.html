@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+{% load bootstrap5 %}
+<link rel="stylesheet" type="text/css" href="{% static '/manage_profiles/profile_css/edit_profile1.css' %}">
+
+    <style>
+
+    body {
+        height: 150vh;
+    }
+</style>
+    <body>
+<form method="POST" enctype="multipart/form-data" action="{% url 'edit profile' object.user.pk %}">
+    <div class="container">
+    {% csrf_token %}
+        <div style="">
+        <h1> EDIT PROFILE </h1>
+            <div class="edit-profile-box">
+                <div class="edit-profile-box-moto">
+                    <br>
+                {{ form.moto }}
+                {{ form.description }}
+                </div>
+
+                {% if profile.profile_picture %}
+                <div>
+                    <img class="" src="{{ object.profile_picture.url }}" alt="user" />
+                </div>
+                {% endif %}
+
+                <div>
+                    {{ form.profile_picture }}
+                </div>
+
+                <div>
+
+                </div>
+        </div>
+            </div>
+
+
+
+    <button class="save-button"> Save </button>
+        </div>
+
+</form>
+</body>
+{% endblock %}

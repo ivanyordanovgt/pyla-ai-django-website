@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <style>
+        h1 {
+            color: red;
+        }
+    </style>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{% static '/web/web_css/index3.css' %}">
+</head>
+<body>
+
+<div id="main-content">
+    <div class="content-box">
+        <div class="moto-box-content">
+        <div class="moto-box">
+            <h2> {{ moto }}</h2>
+            <p> PyLa is strong <span class="open-cv-span"> OpenCV A.I.</span> that plays a very popular game called <span class="brawl-stars-span">
+                Brawl Stars </span> that has over
+                <span class="players-span">100 million players</span>
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+
+<iframe style="width: 30vw; height: 40vh; margin-left: 33vw; margin-top: 5vh" src="https://www.youtube.com/embed/hFp6LQa-ivw?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</body>
+
+
+{% endblock %}

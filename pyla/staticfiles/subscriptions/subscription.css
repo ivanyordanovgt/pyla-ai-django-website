@@ -1,0 +1,267 @@
+.card-box {
+    box-shadow: 0 0 30px 0;
+    padding: 20px;
+    margin-left: 120px;
+    background-position: right 35% bottom 45%;
+    box-sizing: border-box;
+    border-radius: 20px;
+    float: left;
+    height: 111vh;
+    color: red;
+    font-weight: bold;
+    margin-top: 10vh;
+}
+
+.btn-group > a {
+	width: 200%;
+	height: 50px;
+	cursor: pointer;
+	border: none;
+    border-radius: 10px;
+	display: inline;
+	align-items: center;
+	justify-content: center;
+	background-color: #1b2845;
+	background-image: linear-gradient(315deg, #45a29e 0%, #0d324d 74%);
+	background-size: 200% 100%;
+	background-position: left;
+	background-repeat: no-repeat;
+	transition: 500ms;
+    color: white;
+    font-family: "Lato", serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.btn-group > a:hover {
+	background-position: right;
+}
+
+.btn-group > a:before {
+	color: rgba(255,255,255,0.5);
+	font-size: 16px;
+    font-weight: bold;
+    font-family: 'Lato', serif;
+	position: absolute;
+	display: inline;
+	align-items: center;
+	justify-content: center;
+	width: 140px;
+	height: 40px;
+	background-color: #1b2845;
+	background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+	transition: 500ms;
+}
+
+#catalogPage h1{
+    color: #FEBB0B;
+    text-align: center;
+    margin-top: 3vh;
+    font-size: 1.7vw;
+    font-family: 'Lato', serif;
+    text-shadow: 5px 2px black;
+}
+
+.card-box > img {
+    display: block;
+    width: 250px;
+    border-radius: 15px;
+
+}
+
+.btn-group {
+    margin: 20px auto 0;
+}
+
+#catalogPage > p {
+    font-size: 40px;
+    color: #45a29e;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 30px;
+    text-shadow: 2px 2px black solid;
+}
+
+#search > input[type=text] {
+    border-radius: 3px;
+    box-shadow: none;
+    border: 1px solid #384049;
+    background: #15171b;
+    display: block;
+    width: 100%;
+    color: white;
+    transition: all 0.3s ease;
+    font-size: 1.2em;
+    line-height: 1;
+    padding: 0.3em 0.4em;
+    margin: 0 0.5em 1em 0;
+}
+
+#search > input[type=text]::-webkit-input-placeholder{
+    color: #343b44;
+    line-height: 1.2;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+input[type=text]:hover {
+    border-color: white;
+}
+
+.search {
+    margin: 1em auto;
+    padding: 2em;
+    width: 25em;
+    border-radius: 2px;
+    border-color: #2d333b;
+    background: #1b1f24;
+    box-shadow: 0 2px 2px #131518;
+}
+
+.button-list {
+    width: 150px;
+	height: 50px;
+	cursor: pointer;
+	border: none;
+  border-radius: 10px;
+	display: inline;
+	align-items: center;
+	justify-content: center;
+	background-color: #1b2845;
+	background-image: linear-gradient(315deg, #45a29e 0%, #0d324d 74%);
+	background-size: 200% 100%;
+	background-position: left;
+	background-repeat: no-repeat;
+	transition: 500ms;
+  color: white;
+    font-family: "Lato", serif;
+  font-size: 20px;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+.search-result .no-result{
+    margin: 1em auto;
+    padding: 2em;
+    width: 25em;
+    align-items: center;
+}
+
+#search-albums h1, h2 {
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 26px;
+    font-family: 'Lato', serif;
+    text-shadow: 5px 2px black;
+}
+
+.search-result .no-result {
+    font-size: 40px;
+    color: #45a29e;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 30px;
+    text-shadow: 2px 2px black solid;
+}
+
+.search-result .card-box {
+    box-shadow: 0 0 30px 0;
+    background-position: right 35% bottom 45%;
+    box-sizing: border-box;
+    border-radius: 15px;
+    float: left;
+    height: 550px;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 70px;
+    margin-top: 20px;
+
+}
+
+#searchPage > h1 {
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 26px;
+    font-family: 'Lato', serif;
+    text-shadow: 5px 2px black;
+}
+
+.subscription-title {
+    font-size: 4vw;
+    text-align: center;
+    color: orangered;
+    font-family: "MV Boli", serif;
+}
+
+.features {
+    text-align: center;
+}
+
+.h1-feature {
+    color: red;
+}
+
+.h1-center {
+    padding-right: 17vw;
+}
+
+.subscription-details {
+    margin-top: 10vh;
+    width: 100vw;
+    text-align: center;
+    font-size: 1.4vw;
+}
+
+.subscription-details h1 {
+    color: indianred;
+    font-family: "MV Boli", serif;
+    font-size: 5vw;
+}
+
+.subscription-details h2 {
+    color: indianred;
+    font-family: "MV Boli", serif;
+    font-size: 3vw;
+}
+
+.subscription-details .title {
+    font-size: 7vw;
+    max-height: 15vh;
+}
+
+.subscription-details .details {
+    font-size: 1.4vw;
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    color: limegreen;
+    opacity: 0.8;
+
+    max-width: 70vw;
+
+
+    margin-left: 14vw;
+
+    border-top: 3px solid sandybrown;
+
+}
+
+.subscription-details a {
+    text-decoration: none;
+    font-size: 3vw;
+    color: deeppink;
+    font-family: "MV Boli", serif;
+
+}
+
+
+.subscription-title a {
+    text-decoration: none;
+}
+
+.card-box-hover .card-box:hover{
+    background-color: #0d324d;
+}

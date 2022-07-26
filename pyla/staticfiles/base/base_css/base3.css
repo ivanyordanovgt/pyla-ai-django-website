@@ -1,0 +1,193 @@
+
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 140vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("Untitled.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo {
+    margin-top: 1.5vh;
+    float: left;
+}
+
+.logo h1 {
+    color: sandybrown;
+    letter-spacing: 3px;
+    font-family: Bahnschrift, serif;
+    margin-left: 7vw;
+    font-size: 2vw;
+
+}
+
+.logo {
+    line-height: 1vh;
+
+}
+
+.logo span {
+    color: darkred;
+}
+
+.logo .p-logo {
+    font-size: 0.8vw;
+    margin-left: 3.7vw;
+
+    color: indianred;
+
+}
+
+
+
+.nav-bar {
+    float: right;;
+    padding-top: 5vh;
+    margin-right: 5vw;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: Verdana, serif;
+    font-size: 0.9vw;
+    word-spacing: 2vw;
+    letter-spacing: 1px;
+    margin-left: 2vw;
+    max-width: 1vw;
+}
+
+.dropdown button {
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: Bahnschrift, serif;
+    font-size: 0.9vw;
+    word-spacing: 2vw;
+    letter-spacing: 1px;
+    margin-left: 2vw;
+}
+
+.nav-bar a:hover{
+
+    color: darkred;
+
+
+}
+
+.header-moto {
+
+}
+
+.header-bar {
+    background-color: rgba(50, 60, 60, .4);
+    clear: both;
+    height: 12vh;
+    margin-left: 3vw;
+    width: 85vw;
+}
+
+.body-content {
+
+}
+
+.interior-article {
+    margin-top: 35vh;
+    text-align: center;
+}
+
+.interior-article h1 {
+    color: orangered;
+    font-size: 1.8vw;
+    max-height: 8px;
+    font-family: "Droid Sans Mono Dotted", serif;
+}
+
+.interior-article h2 {
+    color: whitesmoke;
+    font-size: 4vw;
+    font-family: "Cambria Math", serif;
+    max-height: 30px;
+    word-spacing: 1.1vw;
+}
+
+.interior-article p {
+    font-size: 1.3vw;
+    color: whitesmoke;
+    font-family: Bahnschrift, serif;
+    letter-spacing: 1px;
+
+}
+
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 25px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+.dropbtn {
+  text-decoration: none;
+  color: whitesmoke;
+  font-family: Bahnschrift, serif;
+  word-spacing: 2vw;
+  letter-spacing: 1px;
+  background-color: transparent;
+  border: none;
+}
+
+.dropdown-content a {
+    color: black;
+    padding-bottom: 1.8vh;
+    text-decoration: none;
+    display: block;
+    padding-right: 1.2vw;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+
+}
+
+.profile-icon {
+    background-image: url("https://pngset.com/images/profile-icon-default-profile-picture-person-face-head-people-transparent-png-1112434.png");
+    height: 10px;
+    width: 10px;
+}
+
+.pyla-span {
+    clear: both;
+    color: red;
+}
+
+.dropdown-content a {
+    font-size: 1vw;
+    font-family: Verdana, serif;
+    text-align: center;
+}
+
+
+
+.dropdown-content h1 {
+    font-size: 1.4vw;
+    text-align: center;
+    color: purple;
+    font-family: Verdana, serif;
+}
+

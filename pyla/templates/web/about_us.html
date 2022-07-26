@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+    <head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{% static '/web/web_css/index_.web_css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/web/web_css/about_us_css/aboutus4.css' %}">
+    </head>
+    <div class="pyla-information-box">
+
+        <div>
+
+            <div class="about-pyla-box">
+                <p id="whatIsPyla"> What is PyLa? <span style="font-size: 1.3vw">drag mouse to here</span></p>
+                <div id="desc" style="display: none">
+                    <p id="" style="color: peachpuff"> {{ description }}
+                        <br>
+                        <br>
+                    </p>
+                    <img src="https://i0.wp.com/spoilerguy.com/wp-content/uploads/2020/04/Escanor-quotes.jpg">
+                    <p> Hover for gameplay</p>
+
+{#                    <iframe style="display: none" width="560" height="315" src="https://www.youtube.com/embed/zyEzz0j13N4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>#}
+<iframe style="width: 30vw; height: 40vh" src="https://www.youtube.com/embed/hFp6LQa-ivw?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <script src="{% static '/javascript/about_us1.js' %}">
+    </script>
+
+
+{% endblock %}

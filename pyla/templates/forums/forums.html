@@ -1,0 +1,73 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <title>Forums</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'forums/forumList.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/subscriptions/subscription.css' %}">
+
+</head>
+
+
+
+   <section id="catalogPage">
+
+    {% for object in forums_list%}
+        <a href="{% url 'show forums posts' object.pk %}" class="card-box-hover">
+        <div class="card-box" style="height: auto">
+        {% if object.profile_picture %}
+            <img src="{{ object.profile_picture.url }}" alt="Cover Image">
+        {% endif %}
+            <div>
+                <div class="text-center">
+                    <p class="subscription-title">{{ object.title }}</p>
+                    <img src="{% static 'forums/images/pylaImage.JPG' %}">
+
+                <br>
+                    <div class="features">
+                        <p> {{ object.description }} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    {% endfor %}
+</section>
+
+
+
+
+
+
+
+    {##}
+{#    <style>#}
+{#        #info {#}
+{#            margin-top: 17vh;#}
+{#        }#}
+{#    </style>#}
+{#<body>#}
+{#<div class="forum">#}
+{##}
+{#        <div id="info" style="float: right; color: peachpuff; text-align: center">#}
+{##}
+{#            <h1 style="color: peachpuff"> To comment a post click on the post's title.</h1>#}
+{#            <h1 style="color: peachpuff"> To access a forum chose one from the list on the left.</h1>#}
+{#            <h1 style="color: peachpuff"> Before continuing you must read our <span style="color: blue" id="rules">rules</span></h1>#}
+{##}
+{#        </div>#}
+{#        <div>#}
+{#            {% include 'forums/side-bar.html' %}#}
+{#        </div>#}
+{##}
+{#</div>#}
+{#</body>#}
+{##}
+{#<script>#}
+{##}
+{#    const bodyElement = document.getElementsByTagName("body")[0]#}
+{#    const rulesLabel = document.getElementById('rules')#}
+{#    rulesLabel.addEventListener('click', () => alert("Its anarchy :O right now! Only rules is don't be rude, racist and post 18+ stuff!"))#}
+{##}
+{#</script>#}
+{% endblock %}

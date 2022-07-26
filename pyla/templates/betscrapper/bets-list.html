@@ -1,0 +1,121 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+<style>
+    .content {
+        padding-top: 10vh;
+        padding-left: 3vw;
+    }
+
+    .match-box {
+        background: rgb(30,30,30,.6);
+        width: 80vw;
+        float:left;
+        border-bottom: 3px solid black;
+        height: 12vh;
+    }
+
+    .bookmaker p{
+        margin-top: 4.3vh;
+        font-size: 1vw;
+        color: pink;
+    }
+
+    .bookmaker h1 {
+        font-size: 1.4vw;
+        color: darkred;
+    }
+
+    .bookmaker {
+        float: left;
+        margin-top: 1vh;
+        width: 10vw;
+        margin-left: 0.3vw;
+    }
+
+    .match-info h1 {
+        color: indianred;
+        font-size: 1.2vw;
+    }
+
+    .match-info {
+        float: left;
+        width: 50vw;
+        margin-left: 3vw;
+    }
+
+    .match-info a {
+        color: indianred;
+        text-decoration: none;
+    }
+
+    .match-info a:hover {
+        color: darkred;
+        font-size: 1.3vw;
+    }
+
+    .match-info p {
+        color: pink;
+    }
+
+    .deep-red-span {
+        color: darkred;
+        font-family: 'Helvetica', Arial, sans-serif;
+    }
+
+    .odds {
+        width: 15vw;
+        margin-left: 1vw;
+    }
+</style>
+    <form method="GET">
+        {{ filter.form }}
+        <button>Filter</button>
+    </form>
+    <div class="content">
+
+    {% if filter.qs %}
+        <div class="DivWithScroll" style="height: 90vh; width: 80vw">
+            {% for bet in filter.qs %}
+                <div class="ScrollDiv" style="height: 80vh">
+                    <div class="match-box">
+                        <div class="bookmaker">
+                            <div style="">
+                            <h1 style="max-height: 1px; margin: 0;"> {{ bet.bookmaker }} </h1>
+                            <p> {{ bet.sport }} <br>
+                                {{ bet.date }} {{ bet.time }}
+                            </p>
+                            <br><br>
+                        </div>
+                    </div>
+
+                        <div class="match-info">
+                            <div style="float: left">
+                                <h1 style="max-height: 1px">
+                                    <a href="{% url 'show match details' bet.pk %}">{{ bet.match_one }} vs {{ bet.match_two }}</a>
+                                </h1>
+                                <p style="float: left"> {{ bet.liga }}</p>
+                            </div>
+                            <div class="odds" style="float: right">
+                                <div style="float: left">
+                                <h1> <span class="deep-red-span">Market</span><br>
+                                    {{ bet.bet_type|truncatechars:13 }} </h1>
+                                </div>
+                                <div style="float: right; margin-left: 3vw">
+                                    <h1>
+                                        <span class="deep-red-span">Odds</span><br>
+                                        {{ bet.odds }} </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <h1 style="color: red;"> NO MATCHES FOUND </h1>
+    {% endif %}
+        </div>
+
+{% endblock %}
