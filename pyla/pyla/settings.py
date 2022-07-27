@@ -91,13 +91,24 @@ WSGI_APPLICATION = 'pyla.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'pyla_soft_db',
+#         'USER': 'postgres',
+#         'PASSWORD': '1123QwER',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pyla_soft_db',
-        'USER': 'postgres',
-        'PASSWORD': '1123QwER',
-        'HOST': '127.0.0.1',
+        'NAME': 'd3g8nvi95n6bef',
+        'USER': 'jizhxgrgcramzw',
+        'PASSWORD': 'eebf00700331b573182cf01db69d9e82f6aec2b7a98b9eb8eeb1cd90f05fac46',
+        'HOST': 'ec2-54-228-125-183.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
