@@ -24,11 +24,11 @@ class AboutPyla(views.TemplateView):
     def get_context_data(self, **kwargs):
         config = self.config
         context = super().get_context_data(**kwargs)
-        # context['pyla_description'] = AboutPylaPageConfigurator.objects.values_list('about_pyla_text', flat=True)[config]
-        # context['pyla_goals'] = AboutPylaPageConfigurator.objects.values_list('goals_text', flat=True)[config]
-        # context['description'] = AboutPylaTextConfigurator.objects.values_list('about_pyla_text', flat=True)[config]
-        # context['goals'] = AboutPylaTextConfigurator.objects.values_list('goals_text', flat=True)[config]
-        #
+        context['pyla_description'] = AboutPylaPageConfigurator.objects.all().values_list('about_pyla_text')
+        context['pyla_goals'] = AboutPylaPageConfigurator.objects.all().values_list('about_pyla_text')
+        context['description'] = AboutPylaTextConfigurator.objects.all().values_list('about_pyla_text')[0][0]
+        context['goals'] = AboutPylaTextConfigurator.objects.all().values_list('about_pyla_text')
+
 
         return context
 
