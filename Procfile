@@ -1,2 +1,2 @@
 web: gunicorn --pythonpath pyla pyla.wsgi
-release: python manage.py migrate
+release: python pyla/manage.py migrate
