@@ -28,6 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1',
                  'pyla-website.herokuapp.com',
                  ]
+DATABASE_URL = 'postgres://jizhxgrgcramzw:eebf00700331b573182cf01db69d9e82f6aec2b7a98b9eb8eeb1cd90f05fac46@ec2-54-228' \
+               '-125-183.eu-west-1.compute.amazonaws.com:5432/d3g8nvi95n6bef '
 # Application definition
 
 DJANGO_APPS = [
