@@ -13,11 +13,8 @@ from pyla.subscriptions.models import Subscription, Features
 
 
 def index(request):
-    context = {
-        'moto': 'ONE STEP AHEAD OF THE GAME'
-    }
 
-    return render(request, 'web/index.html', context)
+    return render(request, 'web/index.html')
 
 
 class AboutPyla(views.TemplateView):
