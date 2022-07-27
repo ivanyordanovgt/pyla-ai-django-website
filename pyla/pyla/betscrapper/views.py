@@ -3,7 +3,6 @@ from django.views import generic as views
 from math import ceil
 from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
-from tkinter import *
 import re
 import random
 from functools import partial
