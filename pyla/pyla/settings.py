@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-l_z)zitcu_etz4dx_f1z37a)bvr&kps!v#^87-4x2mxf)f7ru1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pyla-website.herokuapp.com',]
+ALLOWED_HOSTS = ['127.0.0.1',
+                 'pyla-website.herokuapp.com',
+                 ]
 # Application definition
 
 DJANGO_APPS = [
