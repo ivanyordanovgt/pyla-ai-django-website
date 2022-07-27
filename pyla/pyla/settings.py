@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import DATABASES as DATABASES
 from django.urls import reverse_lazy
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,6 +27,10 @@ SECRET_KEY = 'django-insecure-l_z)zitcu_etz4dx_f1z37a)bvr&kps!v#^87-4x2mxf)f7ru1
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'pyla-website.herokuapp.com']
+
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 # Application definition
 
