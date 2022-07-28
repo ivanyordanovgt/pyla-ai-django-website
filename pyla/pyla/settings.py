@@ -57,7 +57,6 @@ PROJECT_APPS = [
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
 
 MIDDLEWARE = [
-    'pyla.middlewares.handle_exception',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -66,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'pyla.middlewares.handle_exception'
 ]
 
 ROOT_URLCONF = 'pyla.urls'
@@ -173,7 +173,7 @@ USE_TZ = True
 #
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = 'static/'
 # STATICFILES_DIRS = (
 #     os.path.join(BASE_DIR, 'static'),
