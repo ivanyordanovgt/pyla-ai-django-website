@@ -57,7 +57,7 @@ PROJECT_APPS = [
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
 
 MIDDLEWARE = [
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'pyla.middlewares.handle_exception',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -135,22 +135,22 @@ AUTH_PASSWORD_VALIDATORS = [
     #     'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     # },
 ]
-
-CACHES = {
-
-    'default': {
-
-        'BACKEND':
-
-            'django.core.cache.backends.redis.RedisCache',
-
-        'LOCATION':
-
-            'redis://127.0.0.1:6379',
-
-    }
-
-}
+#
+# CACHES = {
+#
+#     'default': {
+#
+#         'BACKEND':
+#
+#             'django.core.cache.backends.redis.RedisCache',
+#
+#         'LOCATION':
+#
+#             'redis://127.0.0.1:6379',
+#
+#     }
+#
+# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
